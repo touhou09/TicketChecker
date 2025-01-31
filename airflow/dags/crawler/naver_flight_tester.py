@@ -169,7 +169,7 @@ if __name__ == "__main__":
     # 검색 파라미터
     departure_airport = "ICN"  # 인천
     arrival_airport = "KIX"    # 오사카 간사이
-    departure_date = "20250310"  # 출발 날짜
+    departure_date = "20250710"  # 출발 날짜
 
     # 크롤링 실행
     results = crawler.fetch_flight_data(departure_airport, arrival_airport, departure_date)
