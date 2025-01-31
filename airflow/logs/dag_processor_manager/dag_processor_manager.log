@@ -700,3 +700,202 @@ File Path                             PID  Runtime      # DAGs    # Errors  Last
 /opt/airflow/dags/gcs_check_dag.py    565  0.03s             2           0  0.25s           2025-01-30T06:30:38
 ================================================================================
 [2025-01-30T06:31:33.793+0000] {manager.py:470} INFO - Exiting gracefully upon receiving signal 15
+[2025-01-31T01:22:32.432+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-01-31T01:22:32.433+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-01-31T01:22:32.434+0000] {manager.py:490} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-01-31T01:22:32.434+0000] {manager.py:758} INFO - Searching for files in /opt/airflow/dags
+[2025-01-31T01:22:32.472+0000] {manager.py:761} INFO - There are 2 files in /opt/airflow/dags
+[2025-01-31T01:22:33.195+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/naver_flight_dag.py      168  0.05s             0           0
+/opt/airflow/dags/cleanup_airflow_db.py                           1           0  0.64s           2025-01-31T01:22:33
+================================================================================
+[2025-01-31T01:23:03.657+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    175  0.06s             1           0  0.64s           2025-01-31T01:22:33
+/opt/airflow/dags/naver_flight_dag.py      178  0.02s             2           0  0.22s           2025-01-31T01:22:33
+================================================================================
+[2025-01-31T01:23:34.417+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    187  0.05s             1           0  0.39s           2025-01-31T01:23:03
+/opt/airflow/dags/naver_flight_dag.py      190  0.01s             2           0  0.37s           2025-01-31T01:23:03
+================================================================================
+[2025-01-31T01:24:04.990+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    197  0.06s             1           0  0.28s           2025-01-31T01:23:34
+/opt/airflow/dags/naver_flight_dag.py      200  0.00s             2           0  0.25s           2025-01-31T01:23:34
+================================================================================
+[2025-01-31T01:24:35.614+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    207  0.03s             1           0  0.27s           2025-01-31T01:24:05
+/opt/airflow/dags/naver_flight_dag.py      210  0.01s             2           0  0.23s           2025-01-31T01:24:05
+================================================================================
+[2025-01-31T01:25:06.025+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    217  0.04s             1           0  0.24s           2025-01-31T01:24:35
+/opt/airflow/dags/naver_flight_dag.py      220  0.01s             2           0  0.23s           2025-01-31T01:24:35
+================================================================================
+[2025-01-31T01:25:36.692+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    227  0.04s             1           0  0.25s           2025-01-31T01:25:06
+/opt/airflow/dags/naver_flight_dag.py      230  0.01s             2           0  0.23s           2025-01-31T01:25:06
+================================================================================
+[2025-01-31T01:26:07.316+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    237  0.03s             1           0  0.31s           2025-01-31T01:25:36
+/opt/airflow/dags/naver_flight_dag.py      240  0.01s             2           0  0.30s           2025-01-31T01:25:36
+================================================================================
+[2025-01-31T01:26:37.844+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    247  0.02s             1           0  0.20s           2025-01-31T01:26:07
+/opt/airflow/dags/naver_flight_dag.py      250  0.01s             2           0  0.19s           2025-01-31T01:26:07
+================================================================================
+[2025-01-31T01:27:08.436+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    257  0.04s             1           0  0.26s           2025-01-31T01:26:38
+/opt/airflow/dags/naver_flight_dag.py      260  0.01s             2           0  0.26s           2025-01-31T01:26:38
+================================================================================
+[2025-01-31T01:27:32.892+0000] {manager.py:758} INFO - Searching for files in /opt/airflow/dags
+[2025-01-31T01:27:32.918+0000] {manager.py:761} INFO - There are 2 files in /opt/airflow/dags
+[2025-01-31T01:27:39.058+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    267  0.05s             1           0  0.22s           2025-01-31T01:27:08
+/opt/airflow/dags/naver_flight_dag.py      270  0.01s             2           0  0.19s           2025-01-31T01:27:08
+================================================================================
+[2025-01-31T01:28:09.654+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    277  0.02s             1           0  0.25s           2025-01-31T01:27:39
+/opt/airflow/dags/naver_flight_dag.py      280  0.00s             2           0  0.22s           2025-01-31T01:27:39
+================================================================================
+[2025-01-31T01:28:40.219+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    287  0.04s             1           0  0.16s           2025-01-31T01:28:09
+/opt/airflow/dags/naver_flight_dag.py      290  0.01s             2           0  0.16s           2025-01-31T01:28:09
+================================================================================
+[2025-01-31T01:29:10.788+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    304  0.01s             1           0  0.26s           2025-01-31T01:28:40
+/opt/airflow/dags/naver_flight_dag.py                             2           0  0.08s           2025-01-31T01:28:46
+================================================================================
+[2025-01-31T01:29:41.224+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    314  0.01s             1           0  0.17s           2025-01-31T01:29:10
+/opt/airflow/dags/naver_flight_dag.py                             2           0  0.14s           2025-01-31T01:29:16
+================================================================================
+[2025-01-31T01:30:11.778+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    324  0.02s             1           0  0.17s           2025-01-31T01:29:41
+/opt/airflow/dags/naver_flight_dag.py                             2           0  0.17s           2025-01-31T01:29:47
+================================================================================
+[2025-01-31T01:30:42.490+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    334  0.06s             1           0  0.24s           2025-01-31T01:30:11
+/opt/airflow/dags/naver_flight_dag.py                             2           0  0.33s           2025-01-31T01:30:18
+================================================================================
+[2025-01-31T01:31:13.164+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    344  0.03s             1           0  0.39s           2025-01-31T01:30:42
+/opt/airflow/dags/naver_flight_dag.py                             2           0  0.26s           2025-01-31T01:30:48
+================================================================================
+[2025-01-31T01:31:43.585+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    354  0.03s             1           0  0.26s           2025-01-31T01:31:13
+/opt/airflow/dags/naver_flight_dag.py                             2           0  0.15s           2025-01-31T01:31:19
+================================================================================
+[2025-01-31T01:32:14.223+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    364  0.04s             1           0  0.24s           2025-01-31T01:31:43
+/opt/airflow/dags/naver_flight_dag.py                             2           0  0.15s           2025-01-31T01:31:49
+================================================================================
+[2025-01-31T01:32:33.468+0000] {manager.py:758} INFO - Searching for files in /opt/airflow/dags
+[2025-01-31T01:32:33.491+0000] {manager.py:761} INFO - There are 2 files in /opt/airflow/dags
+[2025-01-31T01:32:44.690+0000] {manager.py:889} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/cleanup_airflow_db.py    374  0.03s             1           0  0.28s           2025-01-31T01:32:14
+/opt/airflow/dags/naver_flight_dag.py                             2           0  0.16s           2025-01-31T01:32:20
+================================================================================
+[2025-01-31T01:33:13.670+0000] {manager.py:470} INFO - Exiting gracefully upon receiving signal 15
