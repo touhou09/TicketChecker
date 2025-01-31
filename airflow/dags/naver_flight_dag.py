@@ -15,7 +15,7 @@ KST = pytz.timezone('Asia/Seoul')
 
 # GCS 설정
 GCS_BUCKET_NAME = "ticket_checker_bucket"
-GCS_FILE_PATH = "naver_flight_data/flight_results_{date}.json"
+GCS_FILE_PATH = "naver_flight_data/flight_results.json"
 
 # 항공편 데이터를 가져와 JSON으로 저장하는 함수
 def fetch_flight_data_and_upload():
