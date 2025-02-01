@@ -1,0 +1,24 @@
+[2025-02-01T01:07:30.062+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_gcs_to_bigquery.transform_json_to_ndjson manual__2025-02-01T01:07:28.686940+00:00 [queued]>
+[2025-02-01T01:07:30.066+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_gcs_to_bigquery.transform_json_to_ndjson manual__2025-02-01T01:07:28.686940+00:00 [queued]>
+[2025-02-01T01:07:30.067+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-02-01T01:07:30.074+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): transform_json_to_ndjson> on 2025-02-01 01:07:28.686940+00:00
+[2025-02-01T01:07:30.078+0000] {standard_task_runner.py:57} INFO - Started process 2493 to run task
+[2025-02-01T01:07:30.087+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'test_gcs_to_bigquery', 'transform_json_to_ndjson', 'manual__2025-02-01T01:07:28.686940+00:00', '--job-id', '89', '--raw', '--subdir', 'DAGS_FOLDER/bigquery_test_dag.py', '--cfg-path', '/tmp/tmph1rxk2li']
+[2025-02-01T01:07:30.097+0000] {standard_task_runner.py:85} INFO - Job 89: Subtask transform_json_to_ndjson
+[2025-02-01T01:07:30.134+0000] {task_command.py:410} INFO - Running <TaskInstance: test_gcs_to_bigquery.transform_json_to_ndjson manual__2025-02-01T01:07:28.686940+00:00 [running]> on host 3f33197bb456
+[2025-02-01T01:07:30.193+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_gcs_to_bigquery' AIRFLOW_CTX_TASK_ID='transform_json_to_ndjson' AIRFLOW_CTX_EXECUTION_DATE='2025-02-01T01:07:28.686940+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-01T01:07:28.686940+00:00'
+[2025-02-01T01:07:30.199+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2025-02-01T01:07:34.178+0000] {logging_mixin.py:150} INFO - [INFO] 원본 JSON 데이터 로드 성공
+[2025-02-01T01:07:34.185+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/bigquery_test_dag.py", line 41, in transform_json_to_ndjson
+    date = json_data.get("date", "")
+AttributeError: 'list' object has no attribute 'get'
+[2025-02-01T01:07:34.212+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=test_gcs_to_bigquery, task_id=transform_json_to_ndjson, execution_date=20250201T010728, start_date=20250201T010730, end_date=20250201T010734
+[2025-02-01T01:07:34.226+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 89 for task transform_json_to_ndjson ('list' object has no attribute 'get'; 2493)
+[2025-02-01T01:07:34.275+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-02-01T01:07:34.325+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

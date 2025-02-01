@@ -1,0 +1,113 @@
+[2025-02-01T00:53:45.174+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_gcs_to_bigquery.load_ndjson_to_bigquery manual__2025-02-01T00:53:34.591510+00:00 [queued]>
+[2025-02-01T00:53:45.178+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_gcs_to_bigquery.load_ndjson_to_bigquery manual__2025-02-01T00:53:34.591510+00:00 [queued]>
+[2025-02-01T00:53:45.178+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-02-01T00:53:45.186+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): load_ndjson_to_bigquery> on 2025-02-01 00:53:34.591510+00:00
+[2025-02-01T00:53:45.190+0000] {standard_task_runner.py:57} INFO - Started process 1911 to run task
+[2025-02-01T00:53:45.192+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'test_gcs_to_bigquery', 'load_ndjson_to_bigquery', 'manual__2025-02-01T00:53:34.591510+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/bigquery_test_dag.py', '--cfg-path', '/tmp/tmpdqbnk74w']
+[2025-02-01T00:53:45.194+0000] {standard_task_runner.py:85} INFO - Job 77: Subtask load_ndjson_to_bigquery
+[2025-02-01T00:53:45.221+0000] {task_command.py:410} INFO - Running <TaskInstance: test_gcs_to_bigquery.load_ndjson_to_bigquery manual__2025-02-01T00:53:34.591510+00:00 [running]> on host 3f33197bb456
+[2025-02-01T00:53:45.279+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_gcs_to_bigquery' AIRFLOW_CTX_TASK_ID='load_ndjson_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2025-02-01T00:53:34.591510+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-01T00:53:34.591510+00:00'
+[2025-02-01T00:53:45.284+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2025-02-01T00:53:45.361+0000] {logging_mixin.py:150} WARNING - /home/***/.local/lib/python3.7/site-packages/***/providers/google/cloud/hooks/bigquery.py:266 FutureWarning: verbose is deprecated and will be removed in a future version. Set logging level in order to vary verbosity
+[2025-02-01T00:53:50.459+0000] {logging_mixin.py:150} INFO - [INFO] flight_lowest_prices 테이블이 존재하지 않음, 생성 중...
+[2025-02-01T00:53:50.465+0000] {logging_mixin.py:150} WARNING - /home/***/.local/lib/python3.7/site-packages/***/providers/google/cloud/hooks/bigquery.py:138 AirflowProviderDeprecationWarning: This method will be deprecated. Please use `BigQueryHook.get_client` method
+[2025-02-01T00:53:50.482+0000] {sql.py:375} INFO - Running statement: 
+            CREATE TABLE `ticketchecker-449405.ticket_checker.flight_lowest_prices` (
+                date STRING,
+                airline STRING,
+                departure_airport STRING,
+                arrival_airport STRING,
+                departure_time STRING,
+                arrival_time STRING,
+                lowest_price_adult INTEGER,
+                seat_class STRING,
+                currency STRING,
+                carbon_emission FLOAT,
+                errors ARRAY<STRING>
+            )
+        , parameters: None
+[2025-02-01T00:53:50.483+0000] {logging_mixin.py:150} WARNING - /home/***/.local/lib/python3.7/site-packages/***/providers/google/cloud/hooks/bigquery.py:2118 AirflowProviderDeprecationWarning: This method is deprecated. Please use `BigQueryHook.insert_job` method.
+[2025-02-01T00:53:50.485+0000] {bigquery.py:1592} INFO - Inserting job ***_1738371230484383_6dc2c0732e51aa6f37e62c76615a3c6f
+[2025-02-01T00:53:51.297+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas_gbq/gbq.py", line 527, in run_query
+    query_reply.result()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/query.py", line 1520, in result
+    do_get_result()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 354, in retry_wrapped_func
+    on_error=on_error,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 191, in retry_target
+    return target()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/query.py", line 1510, in do_get_result
+    super(QueryJob, self).result(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 922, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/future/polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Table ticketchecker-449405.ticket_checker.flight_lowest_prices does not have a schema.
+
+Location: asia-northeast3
+Job ID: 8cb1a068-8f7b-4aaa-a071-6810f57ba747
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/airflow/dags/bigquery_test_dag.py", line 80, in load_ndjson_to_bigquery
+    bq_hook.get_pandas_df(f"SELECT 1 FROM `{BIGQUERY_PROJECT_ID}.{BIGQUERY_DATASET}.{BIGQUERY_TABLE}` LIMIT 1")
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 266, in get_pandas_df
+    sql, project_id=project_id, dialect=dialect, verbose=False, credentials=credentials, **kwargs
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas_gbq/gbq.py", line 948, in read_gbq
+    dtypes=dtypes,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas_gbq/gbq.py", line 529, in run_query
+    self.process_http_error(ex)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas_gbq/gbq.py", line 396, in process_http_error
+    raise GenericGBQException("Reason: {0}".format(ex)) from ex
+pandas_gbq.exceptions.GenericGBQException: Reason: 400 Table ticketchecker-449405.ticket_checker.flight_lowest_prices does not have a schema.
+
+Location: asia-northeast3
+Job ID: 8cb1a068-8f7b-4aaa-a071-6810f57ba747
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/bigquery_test_dag.py", line 97, in load_ndjson_to_bigquery
+    """)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 349, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 380, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 2763, in execute
+    self.job_id = self.hook.run_query(sql)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 2251, in run_query
+    job = self.insert_job(configuration=configuration, project_id=self.project_id, location=location)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 468, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1598, in insert_job
+    job_api_repr.result(timeout=timeout, retry=retry)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/query.py", line 1520, in result
+    do_get_result()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/query.py", line 1510, in do_get_result
+    super(QueryJob, self).result(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 922, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/future/polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Type not found: FLOAT at [12:33]
+
+Location: asia-northeast3
+Job ID: airflow_1738371230484383_6dc2c0732e51aa6f37e62c76615a3c6f
+
+[2025-02-01T00:53:51.337+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=test_gcs_to_bigquery, task_id=load_ndjson_to_bigquery, execution_date=20250201T005334, start_date=20250201T005345, end_date=20250201T005351
+[2025-02-01T00:53:51.354+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 77 for task load_ndjson_to_bigquery (400 Type not found: FLOAT at [12:33]
+
+Location: asia-northeast3
+Job ID: airflow_1738371230484383_6dc2c0732e51aa6f37e62c76615a3c6f
+; 1911)
+[2025-02-01T00:53:51.368+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-02-01T00:53:51.385+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,23 @@
+[2025-02-01T02:26:50.529+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gcs_to_bigquery_dag.fetch_transform_data manual__2025-02-01T02:26:48.808843+00:00 [queued]>
+[2025-02-01T02:26:50.533+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gcs_to_bigquery_dag.fetch_transform_data manual__2025-02-01T02:26:48.808843+00:00 [queued]>
+[2025-02-01T02:26:50.533+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-02-01T02:26:50.541+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): fetch_transform_data> on 2025-02-01 02:26:48.808843+00:00
+[2025-02-01T02:26:50.544+0000] {standard_task_runner.py:57} INFO - Started process 2324 to run task
+[2025-02-01T02:26:50.546+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'gcs_to_bigquery_dag', 'fetch_transform_data', 'manual__2025-02-01T02:26:48.808843+00:00', '--job-id', '131', '--raw', '--subdir', 'DAGS_FOLDER/json_to_bigquery.py', '--cfg-path', '/tmp/tmppezxb_eb']
+[2025-02-01T02:26:50.548+0000] {standard_task_runner.py:85} INFO - Job 131: Subtask fetch_transform_data
+[2025-02-01T02:26:50.594+0000] {task_command.py:410} INFO - Running <TaskInstance: gcs_to_bigquery_dag.fetch_transform_data manual__2025-02-01T02:26:48.808843+00:00 [running]> on host 3f33197bb456
+[2025-02-01T02:26:50.656+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gcs_to_bigquery_dag' AIRFLOW_CTX_TASK_ID='fetch_transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-02-01T02:26:48.808843+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-01T02:26:48.808843+00:00'
+[2025-02-01T02:26:50.662+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2025-02-01T02:26:50.664+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/json_to_bigquery.py", line 28, in fetch_transform_data
+    raw_data = gcs_hook.download(BUCKET_NAME, OBJECT_NAME)
+NameError: name 'BUCKET_NAME' is not defined
+[2025-02-01T02:26:50.669+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=gcs_to_bigquery_dag, task_id=fetch_transform_data, execution_date=20250201T022648, start_date=20250201T022650, end_date=20250201T022650
+[2025-02-01T02:26:50.675+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 131 for task fetch_transform_data (name 'BUCKET_NAME' is not defined; 2324)
+[2025-02-01T02:26:50.690+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-02-01T02:26:50.714+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
