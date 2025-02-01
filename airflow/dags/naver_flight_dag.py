@@ -43,8 +43,8 @@ def fetch_flight_data_and_upload():
     crawler = NaverFlightCrawler()
     
     # 오늘 날짜부터 5개월(150일) 동안의 데이터 수집
-    start_date = datetime.now(KST) + timedelta(days=1)
-    end_date = start_date + timedelta(days=150)
+    start_date = datetime.now(KST) + timedelta(days=10)
+    end_date = start_date + timedelta(days=10)
 
     flight_data_list = []
     current_date = start_date
@@ -111,9 +111,11 @@ def fetch_transform_data():
     logging.info(f"🟢 변환된 데이터 (각 날짜별 최소 요금): {transformed_data}")
     return transformed_data
 
+from google.cloud import bigquery
+
 def upload_to_bigquery(**kwargs):
     """
-    변환된 데이터를 BigQuery에 업로드하는 함수
+    변환된 데이터를 BigQuery에 업로드하며, 동일한 `date` 값이 있으면 덮어쓰는 기능 추가
     """
     bigquery_hook = BigQueryHook(gcp_conn_id=GCP_CONN_ID, use_legacy_sql=False)
     
@@ -131,17 +133,51 @@ def upload_to_bigquery(**kwargs):
 
     table_id = f"{BQ_PROJECT_ID}.{BQ_DATASET_NAME}.{BQ_TABLE_NAME}"
 
-    # ✅ insert_all() 사용하여 데이터 삽입
-    errors = client.insert_rows_json(
-        table=table_id,
-        json_rows=transformed_data  # ✅ JSON 형태 그대로 전달
+    # ✅ 테이블 존재 여부 확인 및 생성
+    try:
+        client.get_table(table_id)  # 테이블이 존재하는지 확인
+    except Exception:
+        print(f"[INFO] {BQ_TABLE_NAME} 테이블이 존재하지 않음, 생성 중...")
+        schema = [
+            bigquery.SchemaField("date", "STRING"),
+            bigquery.SchemaField("lowest_fare", "INTEGER"),
+        ]
+        table = bigquery.Table(table_id, schema=schema)
+        client.create_table(table)  # 테이블 생성
+        print(f"[INFO] {BQ_TABLE_NAME} 테이블 생성 완료!")
+
+    # ✅ 변환된 데이터를 임시 테이블에 삽입
+    temp_table_id = f"{BQ_PROJECT_ID}.{BQ_DATASET_NAME}.temp_{BQ_TABLE_NAME}"
+    job_config = bigquery.LoadJobConfig(
+        write_disposition="WRITE_TRUNCATE",  # 임시 테이블을 덮어쓰기
+        schema=[
+            bigquery.SchemaField("date", "STRING"),
+            bigquery.SchemaField("lowest_fare", "INTEGER"),
+        ],
     )
 
-    if errors:
-        print(f"❌ BigQuery 업로드 실패: {errors}")
-        raise RuntimeError(f"BigQuery 업로드 중 오류 발생: {errors}")
+    job = client.load_table_from_json(transformed_data, temp_table_id, job_config=job_config)
+    job.result()  # 완료 대기
+    print(f"✅ 임시 테이블 {temp_table_id}에 데이터 로드 완료!")
 
-    print("✅ BigQuery 업로드 완료!")
+    # ✅ MERGE 쿼리 실행 (기존 데이터 업데이트, 새로운 데이터 삽입)
+    merge_query = f"""
+    MERGE `{table_id}` AS target
+    USING `{temp_table_id}` AS source
+    ON target.date = source.date
+    WHEN MATCHED THEN
+        UPDATE SET target.lowest_fare = source.lowest_fare
+    WHEN NOT MATCHED THEN
+        INSERT (date, lowest_fare) VALUES (source.date, source.lowest_fare)
+    """
+    query_job = client.query(merge_query)
+    query_job.result()  # 완료 대기
+    print("✅ MERGE 쿼리 실행 완료! 기존 데이터 업데이트 및 새로운 데이터 삽입 완료.")
+
+    # ✅ 임시 테이블 삭제 (선택 사항)
+    client.delete_table(temp_table_id, not_found_ok=True)
+    print(f"🗑️ 임시 테이블 {temp_table_id} 삭제 완료!")
+
 
 # DAG 정의
 default_args = {

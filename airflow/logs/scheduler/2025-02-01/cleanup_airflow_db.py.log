@@ -3120,3 +3120,213 @@
 [2025-02-01T04:01:34.667+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:01:34.667+0000] {dag.py:2742} INFO - Sync 1 DAGs
 [2025-02-01T04:01:34.686+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:01:34.686+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
 [2025-02-01T04:01:34.700+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.196 seconds
+[2025-02-01T04:03:59.849+0000] {processor.py:157} INFO - Started process (PID=180) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:03:59.850+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:03:59.853+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:03:59.853+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:03:59.877+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:03:59.986+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:03:59.985+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:03:59.999+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:03:59.999+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:04:00.009+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.163 seconds
+[2025-02-01T04:04:30.540+0000] {processor.py:157} INFO - Started process (PID=217) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:04:30.542+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:04:30.545+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:04:30.544+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:04:30.555+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:04:30.657+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:04:30.656+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:04:30.675+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:04:30.675+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:04:30.691+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.153 seconds
+[2025-02-01T04:05:01.031+0000] {processor.py:157} INFO - Started process (PID=232) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:05:01.032+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:05:01.034+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:01.034+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:05:01.044+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:05:01.230+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:01.230+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:05:01.260+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:01.259+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:05:01.292+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.264 seconds
+[2025-02-01T04:05:31.826+0000] {processor.py:157} INFO - Started process (PID=247) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:05:31.827+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:05:31.829+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:31.828+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:05:31.839+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:05:31.940+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:31.939+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:05:31.960+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:31.959+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:05:31.979+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.159 seconds
+[2025-02-01T04:06:02.444+0000] {processor.py:157} INFO - Started process (PID=273) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:06:02.445+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:06:02.447+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:02.447+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:06:02.457+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:06:02.560+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:02.559+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:06:02.574+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:02.574+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:06:02.585+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.142 seconds
+[2025-02-01T04:06:33.123+0000] {processor.py:157} INFO - Started process (PID=288) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:06:33.126+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:06:33.137+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:33.136+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:06:33.159+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:06:33.259+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:33.259+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:06:33.272+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:33.271+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:06:33.282+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.161 seconds
+[2025-02-01T04:07:03.931+0000] {processor.py:157} INFO - Started process (PID=314) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:07:03.932+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:07:03.933+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:03.933+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:07:03.941+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:07:04.021+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:04.021+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:07:04.038+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:04.038+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:07:04.048+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.120 seconds
+[2025-02-01T04:07:34.598+0000] {processor.py:157} INFO - Started process (PID=329) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:07:34.599+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:07:34.602+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:34.602+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:07:34.609+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:07:34.691+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:34.691+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:07:34.717+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:34.716+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:07:34.726+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.133 seconds
+[2025-02-01T04:08:05.269+0000] {processor.py:157} INFO - Started process (PID=344) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:08:05.270+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:08:05.272+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:05.272+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:08:05.285+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:08:05.366+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:05.366+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:08:05.382+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:05.382+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:08:05.400+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.133 seconds
+[2025-02-01T04:08:35.995+0000] {processor.py:157} INFO - Started process (PID=359) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:08:35.996+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:08:35.998+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:35.998+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:08:36.012+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:08:36.101+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:36.100+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:08:36.119+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:36.119+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:08:36.128+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.138 seconds
+[2025-02-01T04:09:06.758+0000] {processor.py:157} INFO - Started process (PID=374) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:09:06.760+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:09:06.761+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:06.761+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:09:06.771+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:09:06.858+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:06.858+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:09:06.873+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:06.873+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:09:06.882+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.127 seconds
+[2025-02-01T04:09:37.508+0000] {processor.py:157} INFO - Started process (PID=389) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:09:37.509+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:09:37.510+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:37.510+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:09:37.518+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:09:37.594+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:37.594+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:09:37.612+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:37.612+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:09:37.622+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.118 seconds
+[2025-02-01T04:10:08.194+0000] {processor.py:157} INFO - Started process (PID=404) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:10:08.194+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:10:08.196+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:08.195+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:10:08.207+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:10:08.318+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:08.318+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:10:08.338+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:08.338+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:10:08.349+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.158 seconds
+[2025-02-01T04:10:38.877+0000] {processor.py:157} INFO - Started process (PID=419) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:10:38.879+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:10:38.883+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:38.882+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:10:38.897+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:10:38.986+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:38.986+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:10:39.005+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:39.004+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:10:39.015+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.145 seconds
+[2025-02-01T04:11:09.593+0000] {processor.py:157} INFO - Started process (PID=434) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:11:09.596+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:11:09.598+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:09.598+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:11:09.607+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:11:09.708+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:09.708+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:11:09.725+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:09.725+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:11:09.734+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.146 seconds
+[2025-02-01T04:11:40.245+0000] {processor.py:157} INFO - Started process (PID=450) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:11:40.247+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:11:40.249+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:40.249+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:11:40.259+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:11:40.409+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:40.409+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:11:40.425+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:40.425+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:11:40.435+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.194 seconds
+[2025-02-01T04:12:10.954+0000] {processor.py:157} INFO - Started process (PID=475) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:12:10.955+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:12:10.959+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:10.959+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:12:10.971+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:12:11.107+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:11.106+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:12:11.123+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:11.123+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:12:11.133+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.183 seconds
+[2025-02-01T04:12:41.649+0000] {processor.py:157} INFO - Started process (PID=490) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:12:41.650+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:12:41.652+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:41.652+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:12:41.670+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:12:41.780+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:41.780+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:12:41.795+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:41.794+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:12:41.804+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.157 seconds
+[2025-02-01T04:13:12.428+0000] {processor.py:157} INFO - Started process (PID=505) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:13:12.432+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:13:12.433+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:12.433+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:13:12.454+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:13:12.563+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:12.563+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:13:12.577+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:12.576+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:13:12.587+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.162 seconds
+[2025-02-01T04:13:43.025+0000] {processor.py:157} INFO - Started process (PID=520) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:13:43.028+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:13:43.032+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:43.032+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:13:43.052+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:13:43.156+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:43.156+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:13:43.169+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:43.168+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:13:43.178+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.162 seconds
+[2025-02-01T04:14:13.716+0000] {processor.py:157} INFO - Started process (PID=535) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:14:13.717+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:14:13.718+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:13.718+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:14:13.726+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:14:13.837+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:13.837+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:14:13.850+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:13.850+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:14:13.859+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.145 seconds
+[2025-02-01T04:14:44.447+0000] {processor.py:157} INFO - Started process (PID=550) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:14:44.450+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:14:44.456+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:44.456+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:14:44.476+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:14:44.579+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:44.579+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:14:44.592+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:44.592+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:14:44.602+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.156 seconds
+[2025-02-01T04:15:15.228+0000] {processor.py:157} INFO - Started process (PID=565) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:15:15.229+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:15:15.230+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:15.230+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:15:15.238+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:15:15.428+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:15.427+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:15:15.450+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:15.450+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:15:15.462+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.240 seconds
+[2025-02-01T04:15:46.041+0000] {processor.py:157} INFO - Started process (PID=580) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:15:46.042+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:15:46.044+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:46.044+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:15:46.059+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:15:46.165+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:46.165+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:15:46.178+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:46.178+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:15:46.188+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.149 seconds
+[2025-02-01T04:16:16.724+0000] {processor.py:157} INFO - Started process (PID=605) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:16:16.727+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:16:16.730+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:16.730+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:16:16.888+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:16:17.005+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:17.005+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:16:17.021+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:17.020+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:16:17.034+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.314 seconds
+[2025-02-01T04:16:47.462+0000] {processor.py:157} INFO - Started process (PID=620) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:16:47.464+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:16:47.467+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:47.466+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:16:47.489+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:16:47.621+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:47.620+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:16:47.644+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:47.644+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:16:47.658+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.201 seconds
+[2025-02-01T04:17:18.328+0000] {processor.py:157} INFO - Started process (PID=667) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:17:18.329+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:17:18.331+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:18.330+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:17:18.345+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:17:18.440+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:18.440+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:17:18.456+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:18.456+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:17:18.466+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.141 seconds
+[2025-02-01T04:17:48.859+0000] {processor.py:157} INFO - Started process (PID=704) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:17:48.860+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:17:48.862+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:48.862+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:17:48.887+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:17:49.006+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:49.005+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:17:49.022+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:49.022+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:17:49.032+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.180 seconds
+[2025-02-01T04:18:19.441+0000] {processor.py:157} INFO - Started process (PID=719) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:18:19.443+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:18:19.448+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:19.447+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:18:19.474+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:18:19.591+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:19.591+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:18:19.607+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:19.607+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:18:19.618+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.184 seconds
+[2025-02-01T04:18:50.099+0000] {processor.py:157} INFO - Started process (PID=734) to work on /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:18:50.100+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/cleanup_airflow_db.py for tasks to queue
+[2025-02-01T04:18:50.103+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:50.103+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:18:50.127+0000] {processor.py:836} INFO - DAG(s) dict_keys(['cleanup_airflow_db']) retrieved from /opt/airflow/dags/cleanup_airflow_db.py
+[2025-02-01T04:18:50.213+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:50.213+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:18:50.227+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:50.227+0000] {dag.py:3508} INFO - Setting next_dagrun for cleanup_airflow_db to 2025-02-01T15:00:00+00:00, run_after=2025-02-08T15:00:00+00:00
+[2025-02-01T04:18:50.237+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/cleanup_airflow_db.py took 0.151 seconds

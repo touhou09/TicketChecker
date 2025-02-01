@@ -3422,3 +3422,269 @@ AttributeError: 'function' object has no attribute 'update_relative'
 [2025-02-01T04:01:50.981+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:01:50.981+0000] {dag.py:2742} INFO - Sync 1 DAGs
 [2025-02-01T04:01:51.000+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:01:50.999+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
 [2025-02-01T04:01:51.020+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.223 seconds
+[2025-02-01T04:03:59.714+0000] {processor.py:157} INFO - Started process (PID=172) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:03:59.717+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:03:59.721+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:03:59.720+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:03:59.777+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:03:59.931+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:03:59.931+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:03:59.954+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:03:59.954+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:03:59.979+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.273 seconds
+[2025-02-01T04:04:30.444+0000] {processor.py:157} INFO - Started process (PID=209) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:04:30.446+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:04:30.449+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:04:30.448+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:04:30.517+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:04:30.656+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:04:30.655+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:04:30.675+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:04:30.675+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:04:30.688+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.260 seconds
+[2025-02-01T04:05:00.925+0000] {processor.py:157} INFO - Started process (PID=224) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:05:00.929+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:05:00.942+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:00.941+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:05:00.975+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:05:01.168+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:01.167+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:05:01.211+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:01.211+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:05:01.247+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.341 seconds
+[2025-02-01T04:05:31.746+0000] {processor.py:157} INFO - Started process (PID=239) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:05:31.748+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:05:31.753+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:31.753+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:05:31.789+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:05:31.933+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:31.932+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:05:31.951+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:05:31.951+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:05:31.977+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.239 seconds
+[2025-02-01T04:06:02.370+0000] {processor.py:157} INFO - Started process (PID=265) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:06:02.375+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:06:02.385+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:02.385+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:06:02.411+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:06:02.531+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:02.530+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:06:02.550+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:02.549+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:06:02.562+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.211 seconds
+[2025-02-01T04:06:33.047+0000] {processor.py:157} INFO - Started process (PID=280) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:06:33.048+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:06:33.052+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:33.052+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:06:33.081+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:06:33.211+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:33.210+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:06:33.230+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:06:33.230+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:06:33.243+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.203 seconds
+[2025-02-01T04:07:03.832+0000] {processor.py:157} INFO - Started process (PID=306) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:07:03.835+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:07:03.840+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:03.839+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:07:03.885+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:07:03.990+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:03.989+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:07:04.012+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:04.012+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:07:04.025+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.201 seconds
+[2025-02-01T04:07:34.507+0000] {processor.py:157} INFO - Started process (PID=321) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:07:34.510+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:07:34.515+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:34.514+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:07:34.547+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:07:34.660+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:34.659+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:07:34.683+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:07:34.683+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:07:34.697+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.205 seconds
+[2025-02-01T04:08:05.205+0000] {processor.py:157} INFO - Started process (PID=336) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:08:05.207+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:08:05.212+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:05.212+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:08:05.245+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:08:05.357+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:05.357+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:08:05.378+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:05.378+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:08:05.394+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.211 seconds
+[2025-02-01T04:08:35.904+0000] {processor.py:157} INFO - Started process (PID=351) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:08:35.907+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:08:35.915+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:35.915+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:08:35.953+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:08:36.049+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:36.049+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:08:36.071+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:08:36.071+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:08:36.096+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.208 seconds
+[2025-02-01T04:09:06.661+0000] {processor.py:157} INFO - Started process (PID=366) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:09:06.664+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:09:06.671+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:06.670+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:09:06.715+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:09:06.813+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:06.813+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:09:06.831+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:06.831+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:09:06.853+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.206 seconds
+[2025-02-01T04:09:37.401+0000] {processor.py:157} INFO - Started process (PID=381) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:09:37.403+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:09:37.408+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:37.407+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:09:37.438+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:09:37.560+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:37.559+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:09:37.579+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:09:37.578+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:09:37.602+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.214 seconds
+[2025-02-01T04:10:08.092+0000] {processor.py:157} INFO - Started process (PID=396) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:10:08.095+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:10:08.101+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:08.100+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:10:08.151+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:10:08.265+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:08.265+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:10:08.293+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:08.293+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:10:08.327+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.245 seconds
+[2025-02-01T04:10:38.772+0000] {processor.py:157} INFO - Started process (PID=411) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:10:38.775+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:10:38.797+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:38.795+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:10:38.826+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:10:38.943+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:38.943+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:10:38.979+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:10:38.979+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:10:38.993+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.231 seconds
+[2025-02-01T04:11:09.499+0000] {processor.py:157} INFO - Started process (PID=426) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:11:09.502+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:11:09.513+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:09.511+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:11:09.540+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:11:09.662+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:09.661+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:11:09.687+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:09.687+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:11:09.705+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.229 seconds
+[2025-02-01T04:11:40.133+0000] {processor.py:157} INFO - Started process (PID=442) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:11:40.139+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:11:40.159+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:40.157+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:11:40.188+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:11:40.338+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:40.337+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:11:40.370+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:11:40.370+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:11:40.390+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.265 seconds
+[2025-02-01T04:12:10.850+0000] {processor.py:157} INFO - Started process (PID=467) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:12:10.853+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:12:10.865+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:10.864+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:12:10.900+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:12:11.055+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:11.055+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:12:11.074+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:11.074+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:12:11.100+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.270 seconds
+[2025-02-01T04:12:41.583+0000] {processor.py:157} INFO - Started process (PID=482) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:12:41.585+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:12:41.590+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:41.589+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:12:41.619+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:12:41.734+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:41.733+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:12:41.760+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:12:41.760+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:12:41.775+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.200 seconds
+[2025-02-01T04:13:12.328+0000] {processor.py:157} INFO - Started process (PID=497) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:13:12.330+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:13:12.334+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:12.333+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:13:12.365+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:13:12.499+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:12.499+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:13:12.521+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:12.521+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:13:12.536+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.217 seconds
+[2025-02-01T04:13:42.931+0000] {processor.py:157} INFO - Started process (PID=512) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:13:42.933+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:13:42.938+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:42.938+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:13:42.971+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:13:43.093+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:43.092+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:13:43.125+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:13:43.125+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:13:43.138+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.222 seconds
+[2025-02-01T04:14:13.620+0000] {processor.py:157} INFO - Started process (PID=527) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:14:13.621+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:14:13.626+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:13.626+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:14:13.663+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:14:13.785+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:13.784+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:14:13.808+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:13.808+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:14:13.823+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.212 seconds
+[2025-02-01T04:14:44.367+0000] {processor.py:157} INFO - Started process (PID=542) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:14:44.370+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:14:44.374+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:44.373+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:14:44.407+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:14:44.524+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:44.523+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:14:44.552+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:14:44.552+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:14:44.566+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.207 seconds
+[2025-02-01T04:15:15.124+0000] {processor.py:157} INFO - Started process (PID=557) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:15:15.125+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:15:15.129+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:15.128+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:15:15.152+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:15:15.282+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:15.282+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:15:15.315+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:15.314+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:15:15.430+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.329 seconds
+[2025-02-01T04:15:45.936+0000] {processor.py:157} INFO - Started process (PID=572) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:15:45.938+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:15:45.949+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:45.948+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:15:45.977+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:15:46.109+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:46.108+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:15:46.141+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:46.140+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:15:46.155+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.238 seconds
+[2025-02-01T04:15:57.345+0000] {processor.py:157} INFO - Started process (PID=587) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:15:57.347+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:15:57.351+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:57.350+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:15:57.384+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:15:57.380+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/naver_flight_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/naver_flight_dag.py", line 185, in <module>
+    default_args=default_args,
+NameError: name 'default_args' is not defined
+[2025-02-01T04:15:57.384+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:15:57.417+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.078 seconds
+[2025-02-01T04:16:05.510+0000] {processor.py:157} INFO - Started process (PID=592) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:05.511+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:16:05.513+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:05.512+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:05.524+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:05.522+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/naver_flight_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/naver_flight_dag.py", line 185, in <module>
+    default_args=default_args,
+NameError: name 'default_args' is not defined
+[2025-02-01T04:16:05.524+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:05.541+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.036 seconds
+[2025-02-01T04:16:12.590+0000] {processor.py:157} INFO - Started process (PID=597) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:12.591+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:16:12.593+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:12.593+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:12.603+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:12.602+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/naver_flight_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/naver_flight_dag.py", line 184, in <module>
+    default_args=default_args,
+NameError: name 'default_args' is not defined
+[2025-02-01T04:16:12.604+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:12.624+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.039 seconds
+[2025-02-01T04:16:43.381+0000] {processor.py:157} INFO - Started process (PID=612) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:43.383+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:16:43.388+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:43.387+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:43.398+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:43.396+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/naver_flight_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/naver_flight_dag.py", line 184, in <module>
+    default_args=default_args,
+NameError: name 'default_args' is not defined
+[2025-02-01T04:16:43.398+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:43.434+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.060 seconds
+[2025-02-01T04:16:54.642+0000] {processor.py:157} INFO - Started process (PID=627) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:54.645+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:16:54.648+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:54.648+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:54.707+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:16:54.814+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:54.812+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:16:54.832+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:16:54.832+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:16:54.849+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.215 seconds
+[2025-02-01T04:17:00.953+0000] {processor.py:157} INFO - Started process (PID=632) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:17:00.954+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:17:00.956+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:00.956+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:17:00.975+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:17:00.989+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:00.989+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:17:01.008+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:01.008+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:17:01.020+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.070 seconds
+[2025-02-01T04:17:03.012+0000] {processor.py:157} INFO - Started process (PID=637) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:17:03.013+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:17:03.017+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:03.016+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:17:03.045+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:17:03.058+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:03.057+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:17:03.076+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:03.076+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:17:03.086+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.082 seconds
+[2025-02-01T04:17:33.554+0000] {processor.py:157} INFO - Started process (PID=696) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:17:33.555+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:17:33.559+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:33.559+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:17:33.594+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:17:33.698+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:33.698+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:17:33.713+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:17:33.713+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:17:33.723+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.175 seconds
+[2025-02-01T04:18:04.138+0000] {processor.py:157} INFO - Started process (PID=711) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:18:04.141+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:18:04.145+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:04.144+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:18:04.195+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:18:04.305+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:04.304+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:18:04.322+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:04.322+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:18:04.334+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.204 seconds
+[2025-02-01T04:18:34.761+0000] {processor.py:157} INFO - Started process (PID=726) to work on /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:18:34.769+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/naver_flight_dag.py for tasks to queue
+[2025-02-01T04:18:34.781+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:34.780+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:18:34.808+0000] {processor.py:836} INFO - DAG(s) dict_keys(['naver_flight_pipeline']) retrieved from /opt/airflow/dags/naver_flight_dag.py
+[2025-02-01T04:18:34.906+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:34.905+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-01T04:18:34.920+0000] {logging_mixin.py:150} INFO - [2025-02-01T04:18:34.920+0000] {dag.py:3508} INFO - Setting next_dagrun for naver_flight_pipeline to 2025-02-01T15:00:00+00:00, run_after=2025-02-02T15:00:00+00:00
+[2025-02-01T04:18:34.931+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/naver_flight_dag.py took 0.186 seconds
