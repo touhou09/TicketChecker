@@ -1,0 +1,51 @@
+[2025-02-01T02:33:19.775+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gcs_to_bigquery_dag.fetch_transform_data manual__2025-02-01T02:33:18.103227+00:00 [queued]>
+[2025-02-01T02:33:19.780+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gcs_to_bigquery_dag.fetch_transform_data manual__2025-02-01T02:33:18.103227+00:00 [queued]>
+[2025-02-01T02:33:19.780+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-02-01T02:33:19.788+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): fetch_transform_data> on 2025-02-01 02:33:18.103227+00:00
+[2025-02-01T02:33:19.791+0000] {standard_task_runner.py:57} INFO - Started process 2579 to run task
+[2025-02-01T02:33:19.793+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'gcs_to_bigquery_dag', 'fetch_transform_data', 'manual__2025-02-01T02:33:18.103227+00:00', '--job-id', '136', '--raw', '--subdir', 'DAGS_FOLDER/json_to_bigquery.py', '--cfg-path', '/tmp/tmpyyvz_bzd']
+[2025-02-01T02:33:19.794+0000] {standard_task_runner.py:85} INFO - Job 136: Subtask fetch_transform_data
+[2025-02-01T02:33:19.832+0000] {task_command.py:410} INFO - Running <TaskInstance: gcs_to_bigquery_dag.fetch_transform_data manual__2025-02-01T02:33:18.103227+00:00 [running]> on host 3f33197bb456
+[2025-02-01T02:33:19.887+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gcs_to_bigquery_dag' AIRFLOW_CTX_TASK_ID='fetch_transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-02-01T02:33:18.103227+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-01T02:33:18.103227+00:00'
+[2025-02-01T02:33:19.893+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2025-02-01T02:33:20.516+0000] {gcs.py:353} ERROR - Download attempt of object: flight_results.json from your-bucket-name has failed. Attempt: 1, max 1.
+[2025-02-01T02:33:20.518+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/client.py", line 1109, in download_blob_to_file
+    retry=retry,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 984, in _do_download
+    response = download.consume(transport, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/download.py", line 238, in consume
+    retriable_request, self._get_status_code, self._retry_strategy
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/download.py", line 219, in retriable_request
+    self._process_response(result)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/_download.py", line 189, in _process_response
+    response, _ACCEPTABLE_STATUS_CODES, self._get_status_code
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/_helpers.py", line 113, in require_status_code
+    *status_codes
+google.resumable_media.common.InvalidResponse: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/json_to_bigquery.py", line 36, in fetch_transform_data
+    raw_data = gcs_hook.download(GCS_BUCKET_NAME, GCS_OBJECT_NAME)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 344, in download
+    return blob.download_as_bytes()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 1401, in download_as_bytes
+    retry=retry,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/client.py", line 1112, in download_blob_to_file
+    _raise_from_invalid_response(exc)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 4373, in _raise_from_invalid_response
+    raise exceptions.from_http_status(response.status_code, message, response=response)
+google.api_core.exceptions.Forbidden: 403 GET https://storage.googleapis.com/download/storage/v1/b/your-bucket-name/o/flight_results.json?alt=media: The billing account for the owning project is disabled in state closed: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)
+[2025-02-01T02:33:20.546+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=gcs_to_bigquery_dag, task_id=fetch_transform_data, execution_date=20250201T023318, start_date=20250201T023319, end_date=20250201T023320
+[2025-02-01T02:33:20.560+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 136 for task fetch_transform_data (403 GET https://storage.googleapis.com/download/storage/v1/b/your-bucket-name/o/flight_results.json?alt=media: The billing account for the owning project is disabled in state closed: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>); 2579)
+[2025-02-01T02:33:20.584+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-02-01T02:33:20.608+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

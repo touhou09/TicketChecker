@@ -1,0 +1,25 @@
+[2025-02-01T02:11:07.909+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gcs_to_bigquery_dag.upload_to_bigquery manual__2025-02-01T02:05:57.794440+00:00 [queued]>
+[2025-02-01T02:11:07.915+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gcs_to_bigquery_dag.upload_to_bigquery manual__2025-02-01T02:05:57.794440+00:00 [queued]>
+[2025-02-01T02:11:07.915+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-02-01T02:11:07.925+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): upload_to_bigquery> on 2025-02-01 02:05:57.794440+00:00
+[2025-02-01T02:11:07.930+0000] {standard_task_runner.py:57} INFO - Started process 1772 to run task
+[2025-02-01T02:11:07.933+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'gcs_to_bigquery_dag', 'upload_to_bigquery', 'manual__2025-02-01T02:05:57.794440+00:00', '--job-id', '124', '--raw', '--subdir', 'DAGS_FOLDER/json_to_bigquery.py', '--cfg-path', '/tmp/tmpziobbspn']
+[2025-02-01T02:11:07.936+0000] {standard_task_runner.py:85} INFO - Job 124: Subtask upload_to_bigquery
+[2025-02-01T02:11:07.966+0000] {task_command.py:410} INFO - Running <TaskInstance: gcs_to_bigquery_dag.upload_to_bigquery manual__2025-02-01T02:05:57.794440+00:00 [running]> on host 3f33197bb456
+[2025-02-01T02:11:08.017+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gcs_to_bigquery_dag' AIRFLOW_CTX_TASK_ID='upload_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2025-02-01T02:05:57.794440+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-01T02:05:57.794440+00:00'
+[2025-02-01T02:11:08.023+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2025-02-01T02:11:08.040+0000] {logging_mixin.py:150} INFO - 🟢 BigQuery에 업로드할 데이터: [{'date': '20250201', 'airline': '', 'flight_number': '', 'departure_airport': '', 'arrival_airport': '', 'departure_time': '', 'arrival_time': '', 'carbon_emission': 0.0}]
+[2025-02-01T02:11:08.828+0000] {logging_mixin.py:150} INFO - ❌ BigQuery 업로드 실패: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'flight_number', 'debugInfo': '', 'message': 'no such field: flight_number.'}]}]
+[2025-02-01T02:11:08.830+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/json_to_bigquery.py", line 144, in upload_to_bigquery
+    raise RuntimeError(f"BigQuery 업로드 중 오류 발생: {errors}")
+RuntimeError: BigQuery 업로드 중 오류 발생: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'flight_number', 'debugInfo': '', 'message': 'no such field: flight_number.'}]}]
+[2025-02-01T02:11:08.861+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=gcs_to_bigquery_dag, task_id=upload_to_bigquery, execution_date=20250201T020557, start_date=20250201T021107, end_date=20250201T021108
+[2025-02-01T02:11:08.883+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 124 for task upload_to_bigquery (BigQuery 업로드 중 오류 발생: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'flight_number', 'debugInfo': '', 'message': 'no such field: flight_number.'}]}]; 1772)
+[2025-02-01T02:11:08.922+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-02-01T02:11:08.941+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,38 @@
+[2025-02-01T00:46:42.874+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_gcs_to_bigquery.transform_and_load_to_bigquery manual__2025-02-01T00:46:41.077688+00:00 [queued]>
+[2025-02-01T00:46:42.879+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_gcs_to_bigquery.transform_and_load_to_bigquery manual__2025-02-01T00:46:41.077688+00:00 [queued]>
+[2025-02-01T00:46:42.879+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-02-01T00:46:42.890+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): transform_and_load_to_bigquery> on 2025-02-01 00:46:41.077688+00:00
+[2025-02-01T00:46:42.894+0000] {standard_task_runner.py:57} INFO - Started process 1647 to run task
+[2025-02-01T00:46:42.902+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'test_gcs_to_bigquery', 'transform_and_load_to_bigquery', 'manual__2025-02-01T00:46:41.077688+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/bigquery_test_dag.py', '--cfg-path', '/tmp/tmpmkfa73g6']
+[2025-02-01T00:46:42.908+0000] {standard_task_runner.py:85} INFO - Job 73: Subtask transform_and_load_to_bigquery
+[2025-02-01T00:46:42.941+0000] {task_command.py:410} INFO - Running <TaskInstance: test_gcs_to_bigquery.transform_and_load_to_bigquery manual__2025-02-01T00:46:41.077688+00:00 [running]> on host 3f33197bb456
+[2025-02-01T00:46:43.005+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_gcs_to_bigquery' AIRFLOW_CTX_TASK_ID='transform_and_load_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2025-02-01T00:46:41.077688+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-01T00:46:41.077688+00:00'
+[2025-02-01T00:46:46.011+0000] {_metadata.py:146} WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: timed out
+[2025-02-01T00:46:46.018+0000] {_metadata.py:146} WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [Errno 111] Connection refused
+[2025-02-01T00:46:46.019+0000] {_metadata.py:146} WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [Errno 111] Connection refused
+[2025-02-01T00:46:46.020+0000] {_default.py:341} WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+[2025-02-01T00:46:46.025+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/bigquery_test_dag.py", line 23, in transform_and_load_to_bigquery
+    storage_client = storage.Client()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/client.py", line 177, in __init__
+    _http=_http,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/client/__init__.py", line 320, in __init__
+    _ClientProjectMixin.__init__(self, project=project, credentials=credentials)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/client/__init__.py", line 268, in __init__
+    project = self._determine_default(project)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/client/__init__.py", line 287, in _determine_default
+    return _determine_default_project(project)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/_helpers/__init__.py", line 152, in _determine_default_project
+    _, project = google.auth.default()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/auth/_default.py", line 692, in default
+    raise exceptions.DefaultCredentialsError(_CLOUD_SDK_MISSING_CREDENTIALS)
+google.auth.exceptions.DefaultCredentialsError: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+[2025-02-01T00:46:46.076+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=test_gcs_to_bigquery, task_id=transform_and_load_to_bigquery, execution_date=20250201T004641, start_date=20250201T004642, end_date=20250201T004646
+[2025-02-01T00:46:46.093+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 73 for task transform_and_load_to_bigquery (Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.; 1647)
+[2025-02-01T00:46:46.134+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-02-01T00:46:46.175+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

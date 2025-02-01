@@ -1,0 +1,17 @@
+[2025-02-01T01:02:58.648+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_gcs_to_bigquery.transform_json_to_ndjson manual__2025-02-01T01:02:56.990323+00:00 [queued]>
+[2025-02-01T01:02:58.652+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_gcs_to_bigquery.transform_json_to_ndjson manual__2025-02-01T01:02:56.990323+00:00 [queued]>
+[2025-02-01T01:02:58.653+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-02-01T01:02:58.660+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): transform_json_to_ndjson> on 2025-02-01 01:02:56.990323+00:00
+[2025-02-01T01:02:58.663+0000] {standard_task_runner.py:57} INFO - Started process 2321 to run task
+[2025-02-01T01:02:58.666+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'test_gcs_to_bigquery', 'transform_json_to_ndjson', 'manual__2025-02-01T01:02:56.990323+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/bigquery_test_dag.py', '--cfg-path', '/tmp/tmpa83prbez']
+[2025-02-01T01:02:58.668+0000] {standard_task_runner.py:85} INFO - Job 87: Subtask transform_json_to_ndjson
+[2025-02-01T01:02:58.701+0000] {task_command.py:410} INFO - Running <TaskInstance: test_gcs_to_bigquery.transform_json_to_ndjson manual__2025-02-01T01:02:56.990323+00:00 [running]> on host 3f33197bb456
+[2025-02-01T01:02:58.772+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_gcs_to_bigquery' AIRFLOW_CTX_TASK_ID='transform_json_to_ndjson' AIRFLOW_CTX_EXECUTION_DATE='2025-02-01T01:02:56.990323+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-01T01:02:56.990323+00:00'
+[2025-02-01T01:02:58.779+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2025-02-01T01:03:02.744+0000] {logging_mixin.py:150} INFO - [INFO] 원본 JSON 데이터 로드 성공
+[2025-02-01T01:03:05.154+0000] {gcs.py:552} INFO - Data stream uploaded to naver_flight_data/flight_results_ndjson.json in ticket_checker_bucket bucket
+[2025-02-01T01:03:05.156+0000] {logging_mixin.py:150} INFO - [INFO] NDJSON 변환 및 업로드 완료: gs://ticket_checker_bucket/naver_flight_data/flight_results_ndjson.json
+[2025-02-01T01:03:05.164+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-01T01:03:05.192+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=test_gcs_to_bigquery, task_id=transform_json_to_ndjson, execution_date=20250201T010256, start_date=20250201T010258, end_date=20250201T010305
+[2025-02-01T01:03:05.248+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-02-01T01:03:05.274+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

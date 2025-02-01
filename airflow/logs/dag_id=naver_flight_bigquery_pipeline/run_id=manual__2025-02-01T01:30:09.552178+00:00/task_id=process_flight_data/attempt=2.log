@@ -1,0 +1,25 @@
+[2025-02-01T01:32:05.258+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: naver_flight_bigquery_pipeline.process_flight_data manual__2025-02-01T01:30:09.552178+00:00 [queued]>
+[2025-02-01T01:32:05.263+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: naver_flight_bigquery_pipeline.process_flight_data manual__2025-02-01T01:30:09.552178+00:00 [queued]>
+[2025-02-01T01:32:05.264+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 3
+[2025-02-01T01:32:05.274+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): process_flight_data> on 2025-02-01 01:30:09.552178+00:00
+[2025-02-01T01:32:05.280+0000] {standard_task_runner.py:57} INFO - Started process 273 to run task
+[2025-02-01T01:32:05.282+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'naver_flight_bigquery_pipeline', 'process_flight_data', 'manual__2025-02-01T01:30:09.552178+00:00', '--job-id', '100', '--raw', '--subdir', 'DAGS_FOLDER/json_to_bigquery.py', '--cfg-path', '/tmp/tmphyd6tcnf']
+[2025-02-01T01:32:05.284+0000] {standard_task_runner.py:85} INFO - Job 100: Subtask process_flight_data
+[2025-02-01T01:32:05.349+0000] {task_command.py:410} INFO - Running <TaskInstance: naver_flight_bigquery_pipeline.process_flight_data manual__2025-02-01T01:30:09.552178+00:00 [running]> on host 3f33197bb456
+[2025-02-01T01:32:05.430+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='naver_flight_bigquery_pipeline' AIRFLOW_CTX_TASK_ID='process_flight_data' AIRFLOW_CTX_EXECUTION_DATE='2025-02-01T01:30:09.552178+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-01T01:30:09.552178+00:00'
+[2025-02-01T01:32:05.438+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2025-02-01T01:32:07.373+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/json_to_bigquery.py", line 83, in upload_to_bigquery
+    processed_data = extract_flight_data()
+  File "/opt/airflow/dags/json_to_bigquery.py", line 29, in extract_flight_data
+    fares = flight_data.get("fares", {})
+AttributeError: 'list' object has no attribute 'get'
+[2025-02-01T01:32:07.404+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=naver_flight_bigquery_pipeline, task_id=process_flight_data, execution_date=20250201T013009, start_date=20250201T013205, end_date=20250201T013207
+[2025-02-01T01:32:07.416+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 100 for task process_flight_data ('list' object has no attribute 'get'; 273)
+[2025-02-01T01:32:07.440+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-02-01T01:32:07.457+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
