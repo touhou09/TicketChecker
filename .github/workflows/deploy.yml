@@ -23,10 +23,14 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} "echo SSH connection successful!"
 
-      - name: Deploy TicketChecker on GCE  # TicketChecker 배포 추가
+      - name: Deploy TicketChecker on GCE
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} << 'EOF'
             cd /home/${{ secrets.GCE_USER }}/TicketChecker
+            
+            # airflow 폴더 권한 수정 (권한 오류 방지)
+            sudo chown -R $USER:$USER airflow
+            sudo chmod -R 755 airflow
 
             # Git 최신 코드 가져오기
             git reset --hard
@@ -38,7 +42,8 @@ jobs:
               exit 1
             fi
 
-            # 기존 컨테이너 중지 및 최신 코드 배포
+            # 기존 컨테이너 중지 및 최신 코드 배포 (Docker 권한 문제 해결)
+            sudo chmod 666 /var/run/docker.sock
             docker-compose down
             docker-compose up -d --build
           EOF
