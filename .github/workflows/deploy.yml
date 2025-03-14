@@ -3,7 +3,7 @@ name: Deploy Airflow on GCE
 on:
   push:
     branches:
-      - main  # main 브랜치에 push될 때 실행
+      - main
 
 jobs:
   deploy:
@@ -15,13 +15,13 @@ jobs:
       - name: Set up SSH Key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.GCE_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.GCE_SSH_PRIVATE_KEY }}" | base64 --decode > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.GCE_IP }} >> ~/.ssh/known_hosts
 
       - name: Deploy to GCE
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} << 'EOF'
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} << 'EOF'
             cd /home/${{ secrets.GCE_USER }}/airflow
             git pull origin main
             docker-compose down
