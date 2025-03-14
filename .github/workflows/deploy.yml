@@ -27,7 +27,7 @@ jobs:
             # TicketChecker 디렉터리에서 배포 수행
             if [ ! -d "TicketChecker/.git" ]; then
               rm -rf TicketChecker
-              git clone YOUR_GITHUB_REPOSITORY_URL TicketChecker
+              git clone https://github.com/touhou09/TicketChecker.git
             else
               cd TicketChecker
               git pull origin main
