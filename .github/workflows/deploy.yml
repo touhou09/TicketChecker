@@ -15,7 +15,7 @@ jobs:
       - name: Set up SSH Key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.GCE_SSH_PRIVATE_KEY }}" | base64 --decode > ~/.ssh/id_rsa
+          echo "${{ secrets.GCE_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.GCE_IP }} >> ~/.ssh/known_hosts
 
