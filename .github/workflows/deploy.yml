@@ -21,9 +21,9 @@ jobs:
 
       - name: Deploy to GCE
         run: |
-          ssh ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} << 'EOF'
+          ssh -i ~/.ssh/id_rsa ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} << 'EOF'
             cd /home/${{ secrets.GCE_USER }}/airflow
-            git pull origin main  # 최신 코드 가져오기
-            docker-compose down  # 기존 컨테이너 중지
-            docker-compose up -d --build  # 새로 빌드 및 실행
+            git pull origin main
+            docker-compose down
+            docker-compose up -d --build
           EOF
