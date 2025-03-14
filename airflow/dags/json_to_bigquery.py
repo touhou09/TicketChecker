@@ -1,7 +1,7 @@
 import sys
 import os
 from airflow import DAG
-from airflow.dags.naver_flight_dag import fetch_transform_data, upload_to_bigquery
+from naver_flight_dag import fetch_transform_data, upload_to_bigquery
 from airflow.operators.python import PythonOperator
 from airflow.providers.google.cloud.hooks.gcs import GCSHook
 from airflow.providers.google.cloud.hooks.bigquery import BigQueryHook
