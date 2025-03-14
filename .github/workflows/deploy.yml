@@ -24,16 +24,14 @@ jobs:
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} << 'EOF'
             cd /home/${{ secrets.GCE_USER }}
 
-            # TicketChecker 디렉터리에서 배포 수행
+            # Git 저장소가 없으면 클론, 있으면 최신 코드로 업데이트
             if [ ! -d "TicketChecker/.git" ]; then
               rm -rf TicketChecker
               git clone https://github.com/touhou09/TicketChecker.git
-            else
-              cd TicketChecker
-              git pull origin main
             fi
-
-            cd /home/${{ secrets.GCE_USER }}/TicketChecker
+            
+            cd TicketChecker
+            git pull origin main
 
             # docker-compose.yml이 없으면 오류 출력 후 종료
             if [ ! -f "docker-compose.yml" ]; then
