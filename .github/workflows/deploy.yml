@@ -22,3 +22,4 @@ jobs:
       - name: Test SSH Connection
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} "echo SSH connection successful!"
+
