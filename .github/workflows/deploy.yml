@@ -3,7 +3,7 @@ name: Deploy Airflow on GCE
 on:
   push:
     branches:
-      - main
+      - main  # main 브랜치에 push될 때 실행
 
 jobs:
   deploy:
@@ -19,7 +19,26 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.GCE_IP }} >> ~/.ssh/known_hosts
 
-      - name: Test SSH Connection
+      - name: Test SSH Connection  # 기존 SSH 연결 테스트 유지
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} "echo SSH connection successful!"
 
+      - name: Deploy TicketChecker on GCE  # TicketChecker 배포 추가
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} << 'EOF'
+            cd /home/${{ secrets.GCE_USER }}/TicketChecker
+
+            # Git 최신 코드 가져오기
+            git reset --hard
+            git pull origin main
+
+            # docker-compose.yml 파일이 없으면 오류 출력 후 종료
+            if [ ! -f "docker-compose.yml" ]; then
+              echo "❌ docker-compose.yml 파일이 없습니다. Git 저장소를 확인하세요."
+              exit 1
+            fi
+
+            # 기존 컨테이너 중지 및 최신 코드 배포
+            docker-compose down
+            docker-compose up -d --build
+          EOF
