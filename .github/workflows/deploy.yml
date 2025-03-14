@@ -22,27 +22,3 @@ jobs:
       - name: Test SSH Connection
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} "echo SSH connection successful!"
-
-      - name: Deploy to GCE
-        run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} << 'EOF'
-            cd /home/${{ secrets.GCE_USER }}
-
-            # Git 저장소가 없으면 클론, 있으면 최신 코드로 업데이트
-            if [ ! -d "TicketChecker/.git" ]; then
-              rm -rf TicketChecker
-              git clone https://github.com/touhou09/TicketChecker.git
-            fi
-            
-            cd TicketChecker
-            git pull origin main
-
-            # docker-compose.yml이 없으면 오류 출력 후 종료
-            if [ ! -f "docker-compose.yml" ]; then
-              echo "❌ docker-compose.yml 파일이 없습니다. Git 저장소를 확인하세요."
-              exit 1
-            fi
-
-            docker-compose down
-            docker-compose up -d --build
-          EOF
