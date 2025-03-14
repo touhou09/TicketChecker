@@ -29,8 +29,8 @@ jobs:
             cd /home/${{ secrets.GCE_USER }}/TicketChecker
             
             # airflow 폴더 권한 수정 (권한 오류 방지)
-            sudo chown -R $USER:$USER airflow
-            sudo chmod -R 755 airflow
+            sudo -S chown -R $USER:$USER airflow
+            sudo -S chmod -R 755 airflow
 
             # Git 최신 코드 가져오기
             git reset --hard
@@ -42,8 +42,12 @@ jobs:
               exit 1
             fi
 
-            # 기존 컨테이너 중지 및 최신 코드 배포 (Docker 권한 문제 해결)
-            sudo chmod 666 /var/run/docker.sock
+            # Docker 권한 문제 해결 (docker.sock 및 Docker 그룹 추가)
+            sudo -S chmod 666 /var/run/docker.sock
+            sudo -S usermod -aG docker $USER
+            newgrp docker
+
+            # 기존 컨테이너 중지 및 최신 코드 배포
             docker-compose down
             docker-compose up -d --build
           EOF
