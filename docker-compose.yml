@@ -37,10 +37,10 @@ services:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__WEBSERVER__AUTHENTICATE=True
       - AIRFLOW__WEBSERVER__AUTH_BACKEND=airflow.www.security.AirflowSecurityManager
+      - AIRFLOW_UID=50000  # Airflow 실행 사용자 지정
     volumes:
-      - ./airflow:/opt/airflow
-    command: >
-      bash -c "rm -f /opt/airflow/airflow-webserver.pid && chmod -R 777 /opt/airflow && airflow webserver"
+      - ./airflow:/opt/airflow:rw  # 읽기/쓰기 권한 부여
+    command: ["airflow", "webserver"]
 
   airflow-scheduler:
     image: apache/airflow:2.6.3
@@ -52,8 +52,9 @@ services:
     environment:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW_UID=50000
     volumes:
-      - ./airflow:/opt/airflow
+      - ./airflow:/opt/airflow:rw
     command: ["airflow", "scheduler"]
 
 volumes:
