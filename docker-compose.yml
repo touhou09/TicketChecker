@@ -21,8 +21,9 @@ services:
       - postgres
     environment:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
-      - AIRFLOW__CORE__EXECUTOR=LocalExecutor  # 유지
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
     entrypoint: ["airflow", "db", "init"]
+
   airflow-webserver:
     image: apache/airflow:2.6.3
     container_name: airflow_webserver
@@ -38,7 +39,8 @@ services:
       - AIRFLOW__WEBSERVER__AUTH_BACKEND=airflow.www.security.AirflowSecurityManager
     volumes:
       - ./airflow:/opt/airflow
-    command: ["airflow", "webserver"]
+    command: >
+      bash -c "rm -f /opt/airflow/airflow-webserver.pid && chmod -R 777 /opt/airflow && airflow webserver"
 
   airflow-scheduler:
     image: apache/airflow:2.6.3
