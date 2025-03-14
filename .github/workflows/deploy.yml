@@ -48,6 +48,7 @@ jobs:
             newgrp docker
 
             # 기존 컨테이너 중지 및 최신 코드 배포
+            chmod -R 777 ./airflow
             docker-compose down
             docker-compose up -d --build
           EOF
