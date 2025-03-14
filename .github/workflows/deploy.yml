@@ -1,0 +1,29 @@
+name: Deploy Airflow on GCE
+
+on:
+  push:
+    branches:
+      - main  # main 브랜치에 push될 때 실행
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GCE_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.GCE_IP }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to GCE
+        run: |
+          ssh ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} << 'EOF'
+            cd /home/${{ secrets.GCE_USER }}/airflow
+            git pull origin main  # 최신 코드 가져오기
+            docker-compose down  # 기존 컨테이너 중지
+            docker-compose up -d --build  # 새로 빌드 및 실행
+          EOF
