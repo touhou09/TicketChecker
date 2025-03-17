@@ -4,7 +4,7 @@ from airflow.providers.google.cloud.hooks.gcs import GCSHook
 from airflow.providers.google.cloud.hooks.bigquery import BigQueryHook
 from google.cloud import bigquery
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 import sys
 import os
@@ -168,7 +168,7 @@ def upload_to_bigquery(**kwargs):
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2024, 3, 1, tzinfo=KST),  # ✅ start_date를 고정된 과거 날짜로 설정 (수정됨)
+    'start_date': datetime(2024, 3, 1, tzinfo=timezone.utc),  # ✅ start_date를 고정된 과거 날짜로 설정 (수정됨)
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
 }
