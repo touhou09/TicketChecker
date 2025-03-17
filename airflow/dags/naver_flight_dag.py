@@ -153,11 +153,11 @@ def upload_to_bigquery(**kwargs):
     merge_query = f"""
     MERGE `{table_id}` AS target
     USING `{temp_table_id}` AS source
-    ON target.date = source.date
+    ON target.date = FORMAT_DATE('%Y%m%d', PARSE_DATE('%Y%m%d', CAST(source.date AS STRING)))  -- ✅ 날짜 변환 추가
     WHEN MATCHED THEN
         UPDATE SET target.lowest_fare = source.lowest_fare
     WHEN NOT MATCHED THEN
-        INSERT (date, lowest_fare) VALUES (source.date, source.lowest_fare)
+        INSERT (date, lowest_fare) VALUES (FORMAT_DATE('%Y%m%d', PARSE_DATE('%Y%m%d', CAST(source.date AS STRING))), source.lowest_fare)
     """
     client.query(merge_query).result()
     client.delete_table(temp_table_id, not_found_ok=True)
