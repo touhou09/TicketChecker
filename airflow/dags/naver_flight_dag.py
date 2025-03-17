@@ -2,6 +2,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.providers.google.cloud.hooks.gcs import GCSHook
 from airflow.providers.google.cloud.hooks.bigquery import BigQueryHook
+from google.cloud import bigquery
 
 from datetime import datetime, timedelta
 
