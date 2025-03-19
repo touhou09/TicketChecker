@@ -156,11 +156,11 @@ def upload_to_bigquery(**kwargs):
     merge_query = f"""
     MERGE `{table_id}` AS target
     USING `{temp_table_id}` AS source
-    ON target.date = source.date
+    ON target.date = CAST(source.date AS STRING)
     WHEN MATCHED AND target.lowest_fare != source.lowest_fare THEN
         UPDATE SET target.lowest_fare = source.lowest_fare
     WHEN NOT MATCHED THEN
-        INSERT (date, lowest_fare) VALUES (source.date, source.lowest_fare)
+        INSERT (date, lowest_fare) VALUES (CAST(source.date AS STRING), source.lowest_fare)
     """
     client.query(merge_query).result()
 
@@ -175,7 +175,6 @@ def upload_to_bigquery(**kwargs):
     client.delete_table(temp_table_id, not_found_ok=True)
 
     logging.info("✅ BigQuery 데이터 업로드 및 MERGE 완료.")
-
 
 # ✅ DAG 설정 변경
 default_args = {
