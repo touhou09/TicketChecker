@@ -113,7 +113,6 @@ def fetch_transform_data(**kwargs):
     kwargs['ti'].xcom_push(key='transformed_data_gcs_path', value=transformed_gcs_path)
 
 
-# ✅ BigQuery 업로드 시 XCom 사용 방식 수정
 def upload_to_bigquery(**kwargs):
     bigquery_hook = BigQueryHook(gcp_conn_id=GCP_CONN_ID, use_legacy_sql=False)
     gcs_hook = GCSHook(gcp_conn_id=GCP_CONN_ID)
@@ -133,6 +132,9 @@ def upload_to_bigquery(**kwargs):
         logging.warning("🔴 No data to insert into BigQuery.")
         return
 
+    # ✅ NULL 값 제거
+    transformed_data = [item for item in transformed_data if item['date'] and item['lowest_fare'] is not None]
+
     client = bigquery_hook.get_client()
     table_id = f"{BQ_PROJECT_ID}.{BQ_DATASET_NAME}.{BQ_TABLE_NAME}"
     temp_table_id = f"{BQ_PROJECT_ID}.{BQ_DATASET_NAME}.temp_{BQ_TABLE_NAME}"
@@ -150,19 +152,30 @@ def upload_to_bigquery(**kwargs):
     job_config = bigquery.LoadJobConfig(write_disposition="WRITE_TRUNCATE")
     client.load_table_from_json(transformed_data, temp_table_id, job_config=job_config).result()
 
+    # ✅ 최신 데이터를 우선 적용하고, 과거 데이터 및 NULL 값 삭제
     merge_query = f"""
     MERGE `{table_id}` AS target
     USING `{temp_table_id}` AS source
-    ON target.date = FORMAT_DATE('%Y%m%d', PARSE_DATE('%Y%m%d', CAST(source.date AS STRING)))  -- ✅ 날짜 변환 추가
-    WHEN MATCHED THEN
+    ON target.date = source.date
+    WHEN MATCHED AND target.lowest_fare != source.lowest_fare THEN
         UPDATE SET target.lowest_fare = source.lowest_fare
     WHEN NOT MATCHED THEN
-        INSERT (date, lowest_fare) VALUES (FORMAT_DATE('%Y%m%d', PARSE_DATE('%Y%m%d', CAST(source.date AS STRING))), source.lowest_fare)
+        INSERT (date, lowest_fare) VALUES (source.date, source.lowest_fare)
     """
     client.query(merge_query).result()
+
+    # ✅ 현재 날짜 이전이거나 lowest_fare가 NULL인 데이터 삭제
+    cleanup_query = f"""
+    DELETE FROM `{table_id}`
+    WHERE lowest_fare IS NULL
+       OR PARSE_DATE('%Y%m%d', date) < CURRENT_DATE()
+    """
+    client.query(cleanup_query).result()
+
     client.delete_table(temp_table_id, not_found_ok=True)
 
     logging.info("✅ BigQuery 데이터 업로드 및 MERGE 완료.")
+
 
 # ✅ DAG 설정 변경
 default_args = {

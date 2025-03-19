@@ -1,0 +1,35 @@
+[
+    {
+        "date":"20250309",
+        "lowest_fare":220300.0
+    },
+    {
+        "date":"20250303",
+        "lowest_fare":72200.0
+    },
+    {
+        "date":"20250331",
+        "lowest_fare":78000.0
+    },
+    {
+        "date":"20250401",
+        "lowest_fare":55000.0
+    }
+    ,
+    {
+        "date":"20250402",
+        "lowest_fare":34542.0
+    },
+    {
+        "date":"20250403",
+        "lowest_fare": null
+    },
+    {
+        "date":"20250404",
+        "lowest_fare": null
+    },
+    {
+        "date":"20250405",
+        "lowest_fare":85000.0
+    }
+]
