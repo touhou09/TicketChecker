@@ -140,6 +140,7 @@ def fetch_transform_data(**kwargs):
 
     # ✅ NULL 값 제거
     df = df.dropna(subset=["flight_id", "price", "departure_time", "arrival_time"])
+    df = df.drop_duplicates(subset=["flight_id"])
 
     transformed_json = df.to_json(orient="records", force_ascii=False, indent=4)
 
