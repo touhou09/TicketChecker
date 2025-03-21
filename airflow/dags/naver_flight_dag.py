@@ -27,7 +27,7 @@ GCS_OBJECT_NAME = "naver_flight_data/flight_results.json"
 GCP_CONN_ID = "google_cloud_default"
 BQ_PROJECT_ID = "ticketchecker-449405"
 BQ_DATASET_NAME = "ticket_checker"
-BQ_TABLE_NAME = "flight_lowest_price"
+BQ_TABLE_NAME = "flight_price"
 
 # ✅ 기존 GCS 연결 확인 방식 유지
 def check_gcs_connection():
