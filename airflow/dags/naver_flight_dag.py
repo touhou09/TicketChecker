@@ -111,7 +111,12 @@ def fetch_transform_data(**kwargs):
                 continue
 
             for fare in fare_info_list:
+                
+                if fare.get("FareType") != "A01":
+                    continue  # 👈 A01이 아닌 경우 스킵
+                
                 adult_fare = fare.get("Adult", {})
+
                 try:
                     total_price = (
                         int(adult_fare.get("Fare", 0)) +
