@@ -6,6 +6,8 @@ from google.cloud import bigquery
 
 from datetime import datetime, timedelta, timezone
 
+import pandas as pd
+
 import sys
 import os
 import pytz
@@ -76,105 +78,143 @@ def fetch_flight_data_and_upload(**kwargs):
 
 # ✅ XCom 대신 GCS에 저장하는 방식으로 수정
 def fetch_transform_data(**kwargs):
+
     gcs_hook = GCSHook(gcp_conn_id=GCP_CONN_ID)
     raw_data = gcs_hook.download(GCS_BUCKET_NAME, GCS_OBJECT_NAME)
     data = json.loads(raw_data) if raw_data else []
 
-    transformed_data = []
+    all_flight_info = []
+
     for entry in data:
         date = entry.get("date")
+        schedules_list = entry.get("data", {}).get("schedules", [])
         fares = entry.get("data", {}).get("fares", {})
+        airlines = entry.get("data", {}).get("airlines", {})
 
-        min_fare = float('inf')
-        for flight_id, fare_info in fares.items():
-            fare_types = fare_info.get("fare", {}).get("A01", [])
-            for fare_option in fare_types:
-                adult_fare = fare_option.get("Adult", {}).get("Fare")
-                if adult_fare is not None:
-                    try:
-                        adult_fare = int(adult_fare)
-                        min_fare = min(min_fare, adult_fare)
-                    except ValueError:
-                        logging.warning(f"⚠️ 요금 변환 실패: {adult_fare}")
+        if not schedules_list:
+            continue
 
-        transformed_data.append({"date": date, "lowest_fare": min_fare if min_fare != float('inf') else None})
+        schedules = schedules_list[0]
 
-    logging.info(f"🟢 변환된 데이터: {transformed_data}")
+        for flight_id, flight_data in schedules.items():
+            detail = flight_data.get("detail", [{}])[0]
+            airline_code = detail.get("av", "")
+            airline_name = airlines.get(airline_code, airline_code)
 
-    # ✅ 변환된 데이터를 GCS에 저장 (XCom 대신)
+            departure_time_raw = detail.get("sdt", "")
+            arrival_time_raw = detail.get("edt", "")
+            departure_time = departure_time_raw[-4:] if len(departure_time_raw) >= 12 else None
+            arrival_time = arrival_time_raw[-4:] if len(arrival_time_raw) >= 12 else None
+
+            fare_info_list = fares.get(flight_id, {}).get("fare", {}).get("A01", [])
+            if not fare_info_list:
+                continue
+
+            for fare in fare_info_list:
+                adult_fare = fare.get("Adult", {})
+                try:
+                    total_price = (
+                        int(adult_fare.get("Fare", 0)) +
+                        int(adult_fare.get("Tax", 0)) +
+                        int(adult_fare.get("QCharge", 0))
+                    )
+                except Exception as e:
+                    logging.warning(f"⚠️ 요금 변환 오류: {e}")
+                    continue
+
+                all_flight_info.append({
+                    "flight_id": flight_id,
+                    "date": date,
+                    "airline": airline_name,
+                    "price": total_price,
+                    "departure_time": departure_time,
+                    "arrival_time": arrival_time
+                })
+
+    df = pd.DataFrame(all_flight_info)
+
+    # ✅ NULL 값 제거
+    df = df.dropna(subset=["flight_id", "price", "departure_time", "arrival_time"])
+
+    transformed_json = df.to_json(orient="records", force_ascii=False, indent=4)
+
     transformed_gcs_path = f"naver_flight_data/transformed_flight_results.json"
     gcs_hook.upload(
         bucket_name=GCS_BUCKET_NAME,
         object_name=transformed_gcs_path,
-        data=json.dumps(transformed_data, ensure_ascii=False, indent=4)
+        data=transformed_json
     )
 
-    # ✅ XCom에는 변환 데이터가 저장된 GCS 경로만 저장
+    logging.info(f"🟢 변환 완료 후 {len(df)}건 유지 (NULL 제거됨)")
+
     kwargs['ti'].xcom_push(key='transformed_data_gcs_path', value=transformed_gcs_path)
 
-
+# ✅ Bigquery에 데이터 저장 (flight_id 기반으로 중복 데이터는 최신화)
 def upload_to_bigquery(**kwargs):
+
     bigquery_hook = BigQueryHook(gcp_conn_id=GCP_CONN_ID, use_legacy_sql=False)
     gcs_hook = GCSHook(gcp_conn_id=GCP_CONN_ID)
 
-    # ✅ XCom에서 변환 데이터가 저장된 GCS 경로 가져오기
     transformed_gcs_path = kwargs['ti'].xcom_pull(task_ids='fetch_transform_data', key='transformed_data_gcs_path')
-    
     if not transformed_gcs_path:
-        logging.warning("🔴 No transformed data GCS path found in XCom.")
+        logging.warning("🔴 XCom에서 변환 경로를 찾지 못했습니다.")
         return
 
-    # ✅ 변환 데이터를 GCS에서 다운로드
     raw_transformed_data = gcs_hook.download(GCS_BUCKET_NAME, transformed_gcs_path)
     transformed_data = json.loads(raw_transformed_data) if raw_transformed_data else []
 
     if not transformed_data:
-        logging.warning("🔴 No data to insert into BigQuery.")
+        logging.warning("🔴 BigQuery에 업로드할 데이터가 없습니다.")
         return
-
-    # ✅ NULL 값 제거
-    transformed_data = [item for item in transformed_data if item['date'] and item['lowest_fare'] is not None]
 
     client = bigquery_hook.get_client()
     table_id = f"{BQ_PROJECT_ID}.{BQ_DATASET_NAME}.{BQ_TABLE_NAME}"
     temp_table_id = f"{BQ_PROJECT_ID}.{BQ_DATASET_NAME}.temp_{BQ_TABLE_NAME}"
 
-    # ✅ BigQuery 테이블 존재 여부 확인 및 생성
+    schema = [
+        bigquery.SchemaField("flight_id", "STRING"),
+        bigquery.SchemaField("date", "STRING"),
+        bigquery.SchemaField("airline", "STRING"),
+        bigquery.SchemaField("price", "INTEGER"),
+        bigquery.SchemaField("departure_time", "STRING"),
+        bigquery.SchemaField("arrival_time", "STRING"),
+    ]
+
     try:
         client.get_table(table_id)
     except Exception:
-        schema = [
-            bigquery.SchemaField("date", "STRING"),
-            bigquery.SchemaField("lowest_fare", "INTEGER"),
-        ]
         client.create_table(bigquery.Table(table_id, schema=schema))
 
-    job_config = bigquery.LoadJobConfig(write_disposition="WRITE_TRUNCATE")
+    job_config = bigquery.LoadJobConfig(write_disposition="WRITE_TRUNCATE", schema=schema)
     client.load_table_from_json(transformed_data, temp_table_id, job_config=job_config).result()
 
-    # ✅ 최신 데이터를 우선 적용하고, 과거 데이터 및 NULL 값 삭제
+    # ✅ 최신 데이터 병합
     merge_query = f"""
     MERGE `{table_id}` AS target
     USING `{temp_table_id}` AS source
-    ON target.date = CAST(source.date AS STRING)
-    WHEN MATCHED AND target.lowest_fare != source.lowest_fare THEN
-        UPDATE SET target.lowest_fare = source.lowest_fare
+    ON target.flight_id = source.flight_id
+    WHEN MATCHED THEN
+      UPDATE SET
+        target.airline = source.airline,
+        target.price = source.price,
+        target.departure_time = source.departure_time,
+        target.arrival_time = source.arrival_time
     WHEN NOT MATCHED THEN
-        INSERT (date, lowest_fare) VALUES (CAST(source.date AS STRING), source.lowest_fare)
+      INSERT (flight_id, date, airline, price, departure_time, arrival_time)
+      VALUES (source.flight_id, source.date, source.airline, source.price, source.departure_time, source.arrival_time)
     """
     client.query(merge_query).result()
 
-    # ✅ 현재 날짜 이전이거나 lowest_fare가 NULL인 데이터 삭제
+    # ✅ 과거 데이터 삭제
     cleanup_query = f"""
     DELETE FROM `{table_id}`
-    WHERE lowest_fare IS NULL
-       OR PARSE_DATE('%Y%m%d', date) < CURRENT_DATE()
+    WHERE PARSE_DATE('%Y%m%d', date) < DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
     """
     client.query(cleanup_query).result()
 
     client.delete_table(temp_table_id, not_found_ok=True)
 
-    logging.info("✅ BigQuery 데이터 업로드 및 MERGE 완료.")
+    logging.info("✅ MERGE 완료 및 이전 날짜 데이터 정리 완료")
 
 # ✅ DAG 설정 변경
 default_args = {
