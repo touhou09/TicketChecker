@@ -13,6 +13,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d  # ✅ superset DB 자동 생성
 
   airflow-init:
     image: apache/airflow:2.6.3
@@ -37,9 +38,9 @@ services:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__WEBSERVER__AUTHENTICATE=True
       - AIRFLOW__WEBSERVER__AUTH_BACKEND=airflow.www.security.AirflowSecurityManager
-      - AIRFLOW_UID=50000  # Airflow 실행 사용자 지정
+      - AIRFLOW_UID=50000
     volumes:
-      - ./airflow:/opt/airflow:rw  # 읽기/쓰기 권한 부여
+      - ./airflow:/opt/airflow:rw
     command: ["airflow", "webserver"]
 
   airflow-scheduler:
@@ -56,19 +57,22 @@ services:
     volumes:
       - ./airflow:/opt/airflow:rw
     command: ["airflow", "scheduler"]
-  
+
   superset:
     image: apache/superset:2.1.0
     container_name: superset
+    depends_on:
+      - postgres
     ports:
       - "8088:8088"
     env_file:
       - .env
     environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
       GOOGLE_APPLICATION_CREDENTIALS: /app/gcp/key.json
+      SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://airflow:airflow@postgres/superset
     volumes:
       - ~/gce_key:/app/gcp/key.json
-      - ./superset_home:/app/superset_home
     command: >
       /bin/bash -c "
       superset db upgrade &&
@@ -82,7 +86,6 @@ services:
       superset init &&
       superset run -h 0.0.0.0 -p 8088
       "
-
 
 volumes:
   postgres_data:
