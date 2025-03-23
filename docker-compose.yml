@@ -74,18 +74,16 @@ services:
     volumes:
       - ~/gce_key:/app/gcp/key.json
     command: >
-      /bin/bash -c "
-      superset db upgrade &&
-      (superset fab list-users | grep admin || \
-      superset fab create-admin \
+      /usr/bin/python3 -m superset db upgrade &&
+      (/usr/bin/python3 -m superset fab list-users | grep admin || \
+      /usr/bin/python3 -m superset fab create-admin \
         --username admin \
         --firstname Superset \
         --lastname Admin \
         --email admin@example.com \
         --password admin) &&
-      superset init &&
-      superset run -h 0.0.0.0 -p 8088
-      "
+      /usr/bin/python3 -m superset init &&
+      /usr/bin/python3 -m superset run -h 0.0.0.0 -p 8088
 
 volumes:
   postgres_data:
