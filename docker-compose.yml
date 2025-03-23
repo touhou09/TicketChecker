@@ -75,7 +75,6 @@ services:
       - ~/gce_key:/app/gcp/key.json
     command: >
       bash -c "
-      . /app/docker/docker-init.sh &&
       superset db upgrade &&
       (superset fab list-users | grep admin || \
       superset fab create-admin \
