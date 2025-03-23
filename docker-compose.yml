@@ -73,9 +73,9 @@ services:
       SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://airflow:airflow@postgres/superset
     volumes:
       - ~/gce_key:/app/gcp/key.json
-    entrypoint: /app/docker/docker-bootstrap.sh
     command: >
       bash -c "
+      . /app/docker/docker-init.sh &&
       superset db upgrade &&
       (superset fab list-users | grep admin || \
       superset fab create-admin \
