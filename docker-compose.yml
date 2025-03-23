@@ -56,6 +56,23 @@ services:
     volumes:
       - ./airflow:/opt/airflow:rw
     command: ["airflow", "scheduler"]
+  
+  superset:
+    image: apache/superset:2.1.0
+    container_name: superset
+    ports:
+      - "8088:8088"
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /app/gcp/key.json
+    volumes:
+      - ~/gce_key:/app/gcp/key.json
+    command: >
+      /bin/bash -c "
+      superset db upgrade &&
+      superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@example.com --password admin --if-not-exists &&
+      superset init &&
+      superset run -h 0.0.0.0 -p 8088
+      "
 
 volumes:
   postgres_data:
