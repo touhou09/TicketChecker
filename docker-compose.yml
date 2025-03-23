@@ -73,19 +73,18 @@ services:
       SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://airflow:airflow@postgres/superset
     volumes:
       - ~/gce_key:/app/gcp/key.json
-    command: >
+    entrypoint: >
       bash -c "
-      superset db upgrade &&
-      (superset fab list-users | grep admin || \
-      superset fab create-admin \
-        --username admin \
-        --firstname Superset \
-        --lastname Admin \
-        --email admin@example.com \
-        --password admin) &&
-      superset init &&
-      superset run -h 0.0.0.0 -p 8088
+        superset db upgrade &&
+        (superset fab list-users | grep admin || \
+          superset fab create-admin \
+            --username admin \
+            --firstname Superset \
+            --lastname Admin \
+            --email admin@example.com \
+            --password admin) &&
+        superset init &&
+        superset run -h 0.0.0.0 -p 8088
       "
-
 volumes:
   postgres_data:
