@@ -27,28 +27,27 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_IP }} << 'EOF'
             cd /home/${{ secrets.GCE_USER }}/TicketChecker
-            
-            # airflow 폴더 권한 수정 (권한 오류 방지)
+
             sudo -S chown -R $USER:$USER airflow
             sudo -S chmod -R 755 airflow
 
-            # Git 최신 코드 가져오기
             git reset --hard
             git pull origin main
 
-            # docker-compose.yml 파일이 없으면 오류 출력 후 종료
             if [ ! -f "docker-compose.yml" ]; then
               echo "❌ docker-compose.yml 파일이 없습니다. Git 저장소를 확인하세요."
               exit 1
             fi
 
-            # Docker 권한 문제 해결 (docker.sock 및 Docker 그룹 추가)
             sudo -S chmod 666 /var/run/docker.sock
             sudo -S usermod -aG docker $USER
             newgrp docker
 
-            # 기존 컨테이너 중지 및 최신 코드 배포
             chmod -R 777 ./airflow
+
+            # ✅ 🔐 Superset용 .env 파일 생성
+            echo "SUPERSET_SECRET_KEY=${{ secrets.SUPERSET_SECRET_KEY }}" > .env
+
             docker-compose down
             docker-compose up -d --build
           EOF

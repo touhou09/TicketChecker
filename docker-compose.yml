@@ -64,6 +64,8 @@ services:
       - "8088:8088"
     environment:
       GOOGLE_APPLICATION_CREDENTIALS: /app/gcp/key.json
+    env_file:
+    - .env
     volumes:
       - ~/gce_key:/app/gcp/key.json
     command: >
