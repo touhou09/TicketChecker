@@ -1,10 +1,10 @@
-# Dockerfile.superset
 FROM apache/superset:2.1.0
 
 USER root
 
-# BigQuery 드라이버 설치
+# packaging 버전을 Superset과 호환되도록 고정
 RUN pip install --no-cache-dir \
+    "packaging<24" \
     pybigquery \
     sqlalchemy-bigquery \
     pandas-gbq
