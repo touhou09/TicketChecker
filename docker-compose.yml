@@ -84,8 +84,8 @@ services:
             --firstname Superset \
             --lastname Admin \
             --email admin@example.com \
-            --password admin) &&
-        superset init &&
+            --password admin) && \
+        superset init && \
         superset run -h 0.0.0.0 -p 8088
       "
 volumes:
