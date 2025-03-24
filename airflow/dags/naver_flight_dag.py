@@ -55,8 +55,8 @@ def fetch_flight_data_and_upload(**kwargs):
 
     crawler = NaverFlightCrawler()
     
-    start_date = datetime.now(KST) + timedelta(days=10)
-    end_date = start_date + timedelta(days=150)
+    start_date = datetime.now(KST) + timedelta(days=7)
+    end_date = start_date + timedelta(days=180)
 
     flight_data_list = []
     current_date = start_date
