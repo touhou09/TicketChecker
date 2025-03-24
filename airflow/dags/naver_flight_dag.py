@@ -234,7 +234,7 @@ default_args = {
 with DAG(
     dag_id='naver_flight_pipeline',
     default_args=default_args,
-    schedule_interval='0 */12 * * *',
+    schedule_interval='0 */8 * * *',
     catchup=False,
 ) as dag:
     gcs_task = PythonOperator(
