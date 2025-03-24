@@ -61,7 +61,7 @@ services:
   superset:
     build:
       context: .
-      dockerfile: dockerfile.superset
+      dockerfile: Dockerfile.superset
     container_name: superset
     depends_on:
       - postgres
@@ -76,17 +76,7 @@ services:
     volumes:
       - ~/gce_key:/app/gcp/key.json
     entrypoint: >
-      bash -c "
-        superset db upgrade &&
-        (superset fab list-users | grep admin || \
-          superset fab create-admin \
-            --username admin \
-            --firstname Superset \
-            --lastname Admin \
-            --email admin@example.com \
-            --password admin) && \
-        superset init && \
-        superset run -h 0.0.0.0 -p 8088
-      "
+      bash -c "superset db upgrade && (superset fab list-users | grep admin || superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@example.com --password admin) && superset init && superset run -h 0.0.0.0 -p 8088"
+
 volumes:
   postgres_data:
