@@ -61,7 +61,7 @@ services:
   superset:
     build:
       context: .
-      dockerfile: Dockerfile.superset
+      dockerfile: dockerfile.superset
     container_name: superset
     depends_on:
       - postgres
