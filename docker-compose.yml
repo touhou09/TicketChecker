@@ -59,7 +59,9 @@ services:
     command: ["airflow", "scheduler"]
 
   superset:
-    image: apache/superset:2.1.0
+    build:
+      context: .
+      dockerfile: Dockerfile.superset
     container_name: superset
     depends_on:
       - postgres
