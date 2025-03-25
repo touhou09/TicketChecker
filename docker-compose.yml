@@ -72,6 +72,7 @@ services:
     environment:
       SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
       AUTH_ROLE_PUBLIC: Public
+      SUPERSET_FEATURE_FLAGS={"DASHBOARD_RBAC": true}
       GOOGLE_APPLICATION_CREDENTIALS: /app/gcp/key.json
       SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://airflow:airflow@postgres/superset
     volumes:
