@@ -59,7 +59,9 @@ services:
     command: ["airflow", "scheduler"]
 
   superset:
-    image: apache/superset:1.5.2  # ✅ 버전 다운그레이드
+    build:
+      context: .  # ✅ 같은 디렉토리에서 dockerfile.superset 사용
+      dockerfile: dockerfile.superset
     container_name: superset
     depends_on:
       - postgres
