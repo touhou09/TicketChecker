@@ -13,7 +13,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init-scripts:/docker-entrypoint-initdb.d  # ✅ superset DB 자동 생성
+      - ./init-scripts:/docker-entrypoint-initdb.d
 
   airflow-init:
     image: apache/airflow:2.6.3
@@ -59,26 +59,24 @@ services:
     command: ["airflow", "scheduler"]
 
   superset:
-    build:
-      context: .
-      dockerfile: dockerfile.superset
+    image: apache/superset:1.5.2  # ✅ 버전 다운그레이드
     container_name: superset
     depends_on:
       - postgres
     ports:
       - "8088:8088"
-    env_file:
-      - .env
     environment:
       SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
-      AUTH_ROLE_PUBLIC: Public
-      SUPERSET_FEATURE_FLAGS: "{\"DASHBOARD_RBAC\": true}"
-      GOOGLE_APPLICATION_CREDENTIALS: /app/gcp/key.json
       SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://airflow:airflow@postgres/superset
+      GOOGLE_APPLICATION_CREDENTIALS: /app/gcp/key.json
+      PYTHONPATH: /app/pythonpath
     volumes:
       - ~/gce_key:/app/gcp/key.json
     entrypoint: >
-      bash -c "superset db upgrade && (superset fab list-users | grep admin || superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@example.com --password admin) && superset init && superset run -h 0.0.0.0 -p 8088"
+      bash -c "superset db upgrade &&
+      (superset fab list-users | grep admin || superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@example.com --password admin) &&
+      superset init &&
+      superset run -h 0.0.0.0 -p 8088"
 
 volumes:
   postgres_data:
