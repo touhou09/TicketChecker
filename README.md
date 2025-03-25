@@ -14,19 +14,21 @@ GCP의 서비스키는 프로젝트 단위로 공유를 한다.
 이 방식을 기반으로 Airflow Web UI에서는 서비스 키를 설정해높고 공유하여 사용할 수 있으므로, 그를 이용하여 GCS, Bigquery에 정상적으로 연결이 되는지 확인을 진행하는 Task이다.
 
 #### crawl_and_upload_task
-Naver Flight API를 통해 10일부터 5개월 이후까지의 데이터를 조회, raw data를 GCS에 저장하도록 하는 Task이다.
+Naver Flight API를 통해 7일부터 6개월 이후까지의 데이터를 조회, raw data를 GCS에 저장하도록 하는 Task이다.
 
-이전에 체크한 GCS를 이용해 적절하게 튜닝한 기간에 맞춰 최대한 많은 raw data를 확보하는 것이 목적이며, 140여일 중 최대 100일 정도의 정상적인 데이터를 확보할 수 있다.
+이전에 체크한 GCS를 이용해 적절하게 튜닝한 기간에 맞춰 최대한 많은 raw data를 확보하는 것이 목적이며, 180여일 중 최대 150일 정도의 정상적인 데이터를 확보할 수 있다.
 
 #### fetch_transform_task
-GCS의 raw data를 가공한 뒤, Airflow의 Task 간 데이터를 공유할 수 있는 xcom에 가공한 날짜별 최저가 데이터를 저장하는 Task이다.
+GCS의 raw data를 가공한 뒤, Airflow의 Task 간 데이터를 공유할 수 있는 xcom에 가공한 데이터를 저장한 GCS 링크를 공유하는 Task이다.
 
-Task 내에서는 json 형태로 저장한 raw data를 가져와 이 json의 key와 각 value를 정확히 확인하여 각 날짜별 최저가를 확인 후 Bigquery에 업로드 가능한 NDJson 형태로 가공하여 xcom에 저장을 진행한다.
+Task 내에서는 json 형태로 저장한 raw data를 가져와 각 indent를 확인하며 각 항공권 코드와 그 항공권의 가격, 항공사 등 관련 데이터를 정리하여 pandas Dataframe으로 변환하여 처리한다.
+
+이후 json으로 변환해 GCS에 저장하고 그 링크를 Airflow의 xcom에 push한다.
 
 #### upload_task
-이전 Task에서 xcom에 저장한 가공된 데이터를 Bigquery에 올리는 Task이다.
+이전 Task에서 xcom에 push한 링크를 기반으로 json을 가져와 테이블 형태로 만든다.
 
-기존 테이블이 없는 경우 새로 테이블을 만들어 업로드하도록 하였으며, 테이블이 있는 경우 임시 테이블을 만든 뒤 merge하여 이전 데이터를 새 데이터로 덮어씌워 Bigquery 내의 데이터를 항상 최신화한다.
+이후 테이블이 없으면 생성하도록 하며, 기존 테이블과 항공권 ID, 항공사가 같은 경우 최신의 데이터로 바꾸고, 현재 날짜 이전의 데이터는 모두 삭제하도록 한다.
 
 #### DAG 구성
 전체적인 DAG의 구성은 아래 이미지와 같이 이루어진다.
