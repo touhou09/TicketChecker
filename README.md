@@ -3,7 +3,6 @@
 Naver Flight API를 크롤링하여 그 데이터를 바탕으로 인천 - 나리타 공항 간 항공권 관련 통계를 확인할 수 있도록 대시보드를 구성하는 프로젝트이다.
 
 ![대시보드 결과](img/dashboard.png)
-
 [대시보드 링크](https://bit.ly/supersets1)
 
 ## 구성
