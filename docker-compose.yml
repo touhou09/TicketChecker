@@ -56,8 +56,10 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW_UID=50000
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/gcp/key.json
     volumes:
       - ./airflow:/opt/airflow:rw
+      - ~/gce_key:/opt/airflow/gcp/key.json
     command: ["airflow", "scheduler"]
 
   superset:
