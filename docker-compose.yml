@@ -41,7 +41,8 @@ services:
       - AIRFLOW_UID=50000
     volumes:
       - ./airflow:/opt/airflow:rw
-
+    command: ["airflow", "webserver"]
+    
   airflow-scheduler:
     image: apache/airflow:2.6.3
     container_name: airflow_scheduler
@@ -55,7 +56,7 @@ services:
       - AIRFLOW_UID=50000
     volumes:
       - ./airflow:/opt/airflow:rw
-
+    command: ["airflow", "scheduler"]
   superset:
     build:
       context: .  # ✅ 같은 디렉토리에서 dockerfile.superset 사용
