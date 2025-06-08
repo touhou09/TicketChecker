@@ -42,8 +42,7 @@ services:
       - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/gcp/key.json
     volumes:
       - ./airflow:/opt/airflow:rw
-      - ${GOOGLE_APPLICATION_CREDENTIALS_PATH}:/opt/airflow/gcp/key.json
-    command: ["airflow", "webserver"]
+      - /home/yujin3178/gce_key:/opt/airflow/gcp
 
   airflow-scheduler:
     image: apache/airflow:2.6.3
@@ -59,8 +58,7 @@ services:
       - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/gcp/key.json
     volumes:
       - ./airflow:/opt/airflow:rw
-      - ${GOOGLE_APPLICATION_CREDENTIALS_PATH}:/opt/airflow/gcp/key.json
-    command: ["airflow", "scheduler"]
+      - /home/yujin3178/gce_key:/opt/airflow/gcp
 
   superset:
     build:
