@@ -39,8 +39,10 @@ services:
       - AIRFLOW__WEBSERVER__AUTHENTICATE=True
       - AIRFLOW__WEBSERVER__AUTH_BACKEND=airflow.www.security.AirflowSecurityManager
       - AIRFLOW_UID=50000
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/gcp/key.json
     volumes:
       - ./airflow:/opt/airflow:rw
+      - ~/gce_key:/opt/airflow/gcp/key.json
     command: ["airflow", "webserver"]
 
   airflow-scheduler:
