@@ -39,10 +39,8 @@ services:
       - AIRFLOW__WEBSERVER__AUTHENTICATE=True
       - AIRFLOW__WEBSERVER__AUTH_BACKEND=airflow.www.security.AirflowSecurityManager
       - AIRFLOW_UID=50000
-      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/gcp/key.json
     volumes:
       - ./airflow:/opt/airflow:rw
-      - /home/yujin3178/gce_key:/opt/airflow/gcp
 
   airflow-scheduler:
     image: apache/airflow:2.6.3
@@ -55,10 +53,8 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW_UID=50000
-      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/gcp/key.json
     volumes:
       - ./airflow:/opt/airflow:rw
-      - /home/yujin3178/gce_key:/opt/airflow/gcp
 
   superset:
     build:
